@@ -47,7 +47,7 @@ func AdoptOrDeleteRepository(ctx *context.Context) {
 	} else if action == "adopt" && allowAdopt {
 		if _, err := repo_service.AdoptRepository(ctxUser, ctxUser, repo_module.CreateRepoOptions{
 			Name:      dir,
-			IsPrivate: true,
+			IsPrivate: false,
 		}); err != nil {
 			ctx.ServerError("repository.AdoptRepository", err)
 			return

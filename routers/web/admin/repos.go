@@ -149,7 +149,7 @@ func AdoptOrDeleteRepository(ctx *context.Context) {
 	} else if action == "adopt" {
 		if _, err := repo_service.AdoptRepository(ctx.Doer, ctxUser, repo_module.CreateRepoOptions{
 			Name:      dirSplit[1],
-			IsPrivate: true,
+			IsPrivate: false,
 		}); err != nil {
 			ctx.ServerError("repository.AdoptRepository", err)
 			return

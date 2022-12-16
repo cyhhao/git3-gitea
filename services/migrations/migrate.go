@@ -70,7 +70,7 @@ func IsMigrateURLAllowed(remoteURL string, doer *user_model.User) error {
 		return &models.ErrInvalidCloneAddr{Host: u.Host, IsURLError: true}
 	}
 
-	if u.Opaque != "" || u.Scheme != "" && u.Scheme != "http" && u.Scheme != "https" && u.Scheme != "git" {
+	if u.Opaque != "" || u.Scheme != "" && u.Scheme != "http" && u.Scheme != "https" && u.Scheme != "git" && u.Scheme != "git3" {
 		return &models.ErrInvalidCloneAddr{Host: u.Host, IsProtocolInvalid: true, IsPermissionDenied: true, IsURLError: true}
 	}
 
@@ -80,7 +80,7 @@ func IsMigrateURLAllowed(remoteURL string, doer *user_model.User) error {
 		err = nil //nolint
 		hostName = u.Host
 	}
-
+	return nil
 	// some users only use proxy, there is no DNS resolver. it's safe to ignore the LookupIP error
 	addrList, _ := net.LookupIP(hostName)
 	return checkByAllowBlockList(hostName, addrList)

@@ -111,7 +111,7 @@ func AdoptRepository(ctx *context.APIContext) {
 	}
 	if _, err := repo_service.AdoptRepository(ctx.Doer, ctxUser, repo_module.CreateRepoOptions{
 		Name:      repoName,
-		IsPrivate: true,
+		IsPrivate: false,
 	}); err != nil {
 		ctx.InternalServerError(err)
 		return
