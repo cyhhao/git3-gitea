@@ -811,6 +811,10 @@ func RegisterRoutes(m *web.Route) {
 		m.Get("/search", repo.SearchRepo)
 	}, reqSignIn)
 
+	m.Group("/git3-repo", func() {
+		m.Get("/create", repo.CreateGit3Repo)
+	})
+
 	m.Group("/{username}/-", func() {
 		if setting.Packages.Enabled {
 			m.Group("/packages", func() {

@@ -112,3 +112,5 @@ prime/
 
 # Manpage
 /man
+
+git3_scripts/venv/

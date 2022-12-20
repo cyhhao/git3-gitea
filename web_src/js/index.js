@@ -2,9 +2,9 @@
 import './bootstrap.js';
 
 import $ from 'jquery';
-import {initVueEnv} from './components/VueComponentLoader.js';
-import {initRepoActivityTopAuthorsChart} from './components/RepoActivityTopAuthors.vue';
-import {initDashboardRepoList} from './components/DashboardRepoList.js';
+import { initVueEnv } from './components/VueComponentLoader.js';
+import { initRepoActivityTopAuthorsChart } from './components/RepoActivityTopAuthors.vue';
+import { initDashboardRepoList } from './components/DashboardRepoList.js';
 
 import attachTribute from './features/tribute.js';
 import initGlobalCopyToClipboardListener from './features/clipboard.js';
@@ -16,17 +16,17 @@ import initRepoMigration from './features/repo-migration.js';
 import initRepoProject from './features/repo-projects.js';
 import initServiceWorker from './features/serviceworker.js';
 import initTableSort from './features/tablesort.js';
-import {initAdminUserListSearchForm} from './features/admin/users.js';
-import {initAdminConfigs} from './features/admin/config.js';
-import {initMarkupAnchors} from './markup/anchors.js';
-import {initNotificationCount, initNotificationsTable} from './features/notification.js';
-import {initRepoIssueContentHistory} from './features/repo-issue-content.js';
-import {initStopwatch} from './features/stopwatch.js';
-import {initFindFileInRepo} from './features/repo-findfile.js';
-import {initCommentContent, initMarkupContent} from './markup/content.js';
+import { initAdminUserListSearchForm } from './features/admin/users.js';
+import { initAdminConfigs } from './features/admin/config.js';
+import { initMarkupAnchors } from './markup/anchors.js';
+import { initNotificationCount, initNotificationsTable } from './features/notification.js';
+import { initRepoIssueContentHistory } from './features/repo-issue-content.js';
+import { initStopwatch } from './features/stopwatch.js';
+import { initFindFileInRepo } from './features/repo-findfile.js';
+import { initCommentContent, initMarkupContent } from './markup/content.js';
 import initDiffFileTree from './features/repo-diff-filetree.js';
 
-import {initUserAuthLinkAccountView, initUserAuthOauth2} from './features/user-auth.js';
+import { initUserAuthLinkAccountView, initUserAuthOauth2 } from './features/user-auth.js';
 import {
   initRepoDiffConversationForm,
   initRepoDiffFileViewToggle,
@@ -60,36 +60,37 @@ import {
   initHeadNavbarContentToggle,
   initGlobalTooltips,
 } from './features/common-global.js';
-import {initRepoTopicBar} from './features/repo-home.js';
-import {initAdminEmails} from './features/admin/emails.js';
-import {initAdminCommon} from './features/admin/common.js';
-import {initRepoTemplateSearch} from './features/repo-template.js';
-import {initRepoCodeView} from './features/repo-code.js';
-import {initSshKeyFormParser} from './features/sshkey-helper.js';
-import {initUserSettings} from './features/user-settings.js';
-import {initRepoArchiveLinks} from './features/repo-common.js';
-import {initRepoMigrationStatusChecker} from './features/repo-migrate.js';
+import { initRepoTopicBar } from './features/repo-home.js';
+import { initAdminEmails } from './features/admin/emails.js';
+import { initAdminCommon } from './features/admin/common.js';
+import { initRepoTemplateSearch } from './features/repo-template.js';
+import { initRepoCodeView } from './features/repo-code.js';
+import { initSshKeyFormParser } from './features/sshkey-helper.js';
+import { initUserSettings } from './features/user-settings.js';
+import { initRepoArchiveLinks } from './features/repo-common.js';
+import { initRepoMigrationStatusChecker } from './features/repo-migrate.js';
 import {
   initRepoSettingGitHook,
   initRepoSettingsCollaboration,
   initRepoSettingSearchTeamBox,
 } from './features/repo-settings.js';
-import {initViewedCheckboxListenerFor} from './features/pull-view-file.js';
-import {initOrgTeamSearchRepoBox, initOrgTeamSettings} from './features/org-team.js';
-import {initUserAuthWebAuthn, initUserAuthWebAuthnRegister} from './features/user-auth-webauthn.js';
-import {initRepoRelease, initRepoReleaseEditor} from './features/repo-release.js';
-import {initRepoEditor} from './features/repo-editor.js';
-import {initCompSearchUserBox} from './features/comp/SearchUserBox.js';
-import {initInstall} from './features/install.js';
-import {initCompWebHookEditor} from './features/comp/WebHookEditor.js';
-import {initCommonIssue} from './features/common-issue.js';
-import {initRepoBranchButton} from './features/repo-branch.js';
-import {initCommonOrganization} from './features/common-organization.js';
-import {initRepoWikiForm} from './features/repo-wiki.js';
-import {initRepoCommentForm, initRepository} from './features/repo-legacy.js';
-import {initFormattingReplacements} from './features/formatting.js';
-import {initMcaptcha} from './features/mcaptcha.js';
-import {initCopyContent} from './features/copycontent.js';
+import { initViewedCheckboxListenerFor } from './features/pull-view-file.js';
+import { initOrgTeamSearchRepoBox, initOrgTeamSettings } from './features/org-team.js';
+import { initUserAuthWebAuthn, initUserAuthWebAuthnRegister } from './features/user-auth-webauthn.js';
+import { initRepoRelease, initRepoReleaseEditor } from './features/repo-release.js';
+import { initRepoEditor } from './features/repo-editor.js';
+import { initCompSearchUserBox } from './features/comp/SearchUserBox.js';
+import { initInstall } from './features/install.js';
+import { initCompWebHookEditor } from './features/comp/WebHookEditor.js';
+import { initCommonIssue } from './features/common-issue.js';
+import { initRepoBranchButton } from './features/repo-branch.js';
+import { initCommonOrganization } from './features/common-organization.js';
+import { initRepoWikiForm } from './features/repo-wiki.js';
+import { initRepoCommentForm, initRepository } from './features/repo-legacy.js';
+import { initFormattingReplacements } from './features/formatting.js';
+import { initMcaptcha } from './features/mcaptcha.js';
+import { initCopyContent } from './features/copycontent.js';
+import { initGit3Mount } from './features/git3-mount.js';
 
 // Run time-critical code as soon as possible. This is safe to do because this
 // script appears at the end of <body> and rendered HTML is accessible at that point.
@@ -122,6 +123,8 @@ $(document).ready(() => {
   initCompWebHookEditor();
 
   initInstall();
+
+  initGit3Mount();
 
   initHeadNavbarContentToggle();
   initFootLanguageMenu();

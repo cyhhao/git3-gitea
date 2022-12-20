@@ -126,6 +126,10 @@ func getRepoPrivate(ctx *context.Context) bool {
 	}
 }
 
+func CreateGit3Repo(ctx *context.Context) {
+	ctx.HTML(http.StatusOK, "repo/git3_repo_create")
+}
+
 // Create render creating repository page
 func Create(ctx *context.Context) {
 	ctx.Data["Title"] = ctx.Tr("new_repo")

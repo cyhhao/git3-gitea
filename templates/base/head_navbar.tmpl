@@ -208,9 +208,12 @@
 					{{svg "octicon-person"}} {{.locale.Tr "register"}}
 				</a>
 			{{end}}
-			<a class="item{{if .PageIsSignIn}} active{{end}}" rel="nofollow" href="{{AppSubUrl}}/user/login{{if not .PageIsSignIn}}?redirect_to={{.CurrentURL}}{{end}}">
-				{{svg "octicon-sign-in"}} {{.locale.Tr "sign_in"}}
+			<a class="item" href="{{AppSubUrl}}/git3-repo/create">
+				<span class="fitted">{{svg "octicon-plus"}}</span> {{.locale.Tr "new_repo"}}
 			</a>
+			<!-- <a class="item{{if .PageIsSignIn}} active{{end}}" rel="nofollow" href="{{AppSubUrl}}/user/login{{if not .PageIsSignIn}}?redirect_to={{.CurrentURL}}{{end}}">
+				{{svg "octicon-sign-in"}} {{.locale.Tr "sign_in"}}
+			</a> -->
 		</div><!-- end anonymous right menu -->
 	{{end}}
 </div>

@@ -4,15 +4,15 @@ import AddAssetPlugin from 'add-asset-webpack-plugin';
 import LicenseCheckerWebpackPlugin from 'license-checker-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import MonacoWebpackPlugin from 'monaco-editor-webpack-plugin';
-import {VueLoaderPlugin} from 'vue-loader';
+import { VueLoaderPlugin } from 'vue-loader';
 import EsBuildLoader from 'esbuild-loader';
-import {parse, dirname} from 'path';
+import { parse, dirname } from 'path';
 import webpack from 'webpack';
-import {fileURLToPath} from 'url';
-import {readFileSync} from 'fs';
+import { fileURLToPath } from 'url';
+import { readFileSync } from 'fs';
 
-const {ESBuildMinifyPlugin} = EsBuildLoader;
-const {SourceMapDevToolPlugin} = webpack;
+const { ESBuildMinifyPlugin } = EsBuildLoader;
+const { SourceMapDevToolPlugin } = webpack;
 const formatLicenseText = (licenseText) => wrapAnsi(licenseText || '', 80).trim();
 
 const glob = (pattern) => fastGlob.sync(pattern, {
@@ -74,12 +74,12 @@ export default {
   devtool: false,
   output: {
     path: fileURLToPath(new URL('public', import.meta.url)),
-    filename: ({chunk}) => {
+    filename: ({ chunk }) => {
       // serviceworker can only manage assets below it's script's directory so
       // we have to put it in / instead of /js/
       return chunk.name === 'serviceworker' ? '[name].js' : 'js/[name].js';
     },
-    chunkFilename: ({chunk}) => {
+    chunkFilename: ({ chunk }) => {
       const language = (/monaco.*languages?_.+?_(.+?)_/.exec(chunk.id) || [])[1];
       return `js/${language ? `monaco-language-${language.toLowerCase()}` : `[name]`}.[contenthash:8].js`;
     },
@@ -142,8 +142,8 @@ export default {
             loader: 'css-loader',
             options: {
               sourceMap: true,
-              url: {filter: filterCssImport},
-              import: {filter: filterCssImport},
+              url: { filter: filterCssImport },
+              import: { filter: filterCssImport },
             },
           },
         ],
@@ -159,8 +159,8 @@ export default {
             options: {
               sourceMap: true,
               importLoaders: 1,
-              url: {filter: filterCssImport},
-              import: {filter: filterCssImport},
+              url: { filter: filterCssImport },
+              import: { filter: filterCssImport },
             },
           },
           {
@@ -210,30 +210,31 @@ export default {
     }),
     isProduction ? new LicenseCheckerWebpackPlugin({
       outputFilename: 'js/licenses.txt',
-      outputWriter: ({dependencies}) => {
+      outputWriter: ({ dependencies }) => {
         const line = '-'.repeat(80);
         const goJson = readFileSync('assets/go-licenses.json', 'utf8');
-        const goModules = JSON.parse(goJson).map(({name, licenseText}) => {
-          return {name, body: formatLicenseText(licenseText)};
+        const goModules = JSON.parse(goJson).map(({ name, licenseText }) => {
+          return { name, body: formatLicenseText(licenseText) };
         });
-        const jsModules = dependencies.map(({name, version, licenseName, licenseText}) => {
-          return {name, version, licenseName, body: formatLicenseText(licenseText)};
+        const jsModules = dependencies.map(({ name, version, licenseName, licenseText }) => {
+          return { name, version, licenseName, body: formatLicenseText(licenseText) };
         });
 
         const modules = [...goModules, ...jsModules].sort((a, b) => a.name.localeCompare(b.name));
-        return modules.map(({name, version, licenseName, body}) => {
+        return modules.map(({ name, version, licenseName, body }) => {
           const title = licenseName ? `${name}@${version} - ${licenseName}` : name;
           return `${line}\n${title}\n${line}\n${body}`;
         }).join('\n');
       },
       override: {
-        'jquery.are-you-sure@*': {licenseName: 'MIT'}, // https://github.com/codedance/jquery.AreYouSure/pull/147
-        'khroma@*': {licenseName: 'MIT'}, // https://github.com/fabiospampinato/khroma/pull/33
+        'jquery.are-you-sure@*': { licenseName: 'MIT' }, // https://github.com/codedance/jquery.AreYouSure/pull/147
+        'khroma@*': { licenseName: 'MIT' }, // https://github.com/fabiospampinato/khroma/pull/33
       },
       emitError: true,
       allow: '(Apache-2.0 OR BSD-2-Clause OR BSD-3-Clause OR MIT OR ISC OR CPAL-1.0 OR Unlicense)',
       ignore: [
         'font-awesome',
+        'tslib',
       ],
     }) : new AddAssetPlugin('js/licenses.txt', `Licenses are disabled during development`),
   ],

@@ -4,6 +4,7 @@
 package healthcheck
 
 import (
+	"fmt"
 	"net/http"
 	"os"
 	"time"
@@ -64,6 +65,7 @@ type componentStatus struct {
 
 // Check is the health check API handler
 func Check(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("check hello")
 	rsp := response{
 		Status:      pass,
 		Description: setting.AppName,
