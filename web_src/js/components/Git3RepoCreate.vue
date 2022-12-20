@@ -38,6 +38,10 @@
             </button>
           </div>
 
+          <div v-if="mode == 'Create'" class="inline field markup">
+            <pre>You can also use: <span style="background-color: #00000045;font-size: 12px;padding: 4px;border-radius: 5px;">git3 create [wallet] [repo_name]</span> command to create the repo.</pre>
+          </div>
+
         </div>
 
       </form>
