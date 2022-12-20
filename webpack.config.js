@@ -245,6 +245,7 @@ export default {
   },
   resolve: {
     symlinks: false,
+    fallback: { crypto: false, stream: false },
   },
   watchOptions: {
     ignored: [

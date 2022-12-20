@@ -49,16 +49,20 @@
 <script>
 import Onboard from '@web3-onboard/core'
 import injectedModule from '@web3-onboard/injected-wallets'
+import walletConnectModule from '@web3-onboard/walletconnect'
 import { ethers } from 'ethers'
 import { Buffer } from 'buffer'
 import transactionPreviewModule from '@web3-onboard/transaction-preview'
+import keystoneModule from '@web3-onboard/keystone'
+
+const keystone = keystoneModule()
 
 const transactionPreview = transactionPreviewModule()
 const injected = injectedModule()
-
+const walletConnect = walletConnectModule()
 const onboard = Onboard({
   transactionPreview,
-  wallets: [injected],
+  wallets: [injected, walletConnect, keystone],
   apiKey: 'a6d67945-a99e-4d06-bbf8-1eed0cb76529',
   chains: [
     {
