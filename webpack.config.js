@@ -208,35 +208,35 @@ export default {
     new MonacoWebpackPlugin({
       filename: 'js/monaco-[name].[contenthash:8].worker.js',
     }),
-    isProduction ? new LicenseCheckerWebpackPlugin({
-      outputFilename: 'js/licenses.txt',
-      outputWriter: ({ dependencies }) => {
-        const line = '-'.repeat(80);
-        const goJson = readFileSync('assets/go-licenses.json', 'utf8');
-        const goModules = JSON.parse(goJson).map(({ name, licenseText }) => {
-          return { name, body: formatLicenseText(licenseText) };
-        });
-        const jsModules = dependencies.map(({ name, version, licenseName, licenseText }) => {
-          return { name, version, licenseName, body: formatLicenseText(licenseText) };
-        });
+    // isProduction ? new LicenseCheckerWebpackPlugin({
+    //   outputFilename: 'js/licenses.txt',
+    //   outputWriter: ({ dependencies }) => {
+    //     const line = '-'.repeat(80);
+    //     const goJson = readFileSync('assets/go-licenses.json', 'utf8');
+    //     const goModules = JSON.parse(goJson).map(({ name, licenseText }) => {
+    //       return { name, body: formatLicenseText(licenseText) };
+    //     });
+    //     const jsModules = dependencies.map(({ name, version, licenseName, licenseText }) => {
+    //       return { name, version, licenseName, body: formatLicenseText(licenseText) };
+    //     });
 
-        const modules = [...goModules, ...jsModules].sort((a, b) => a.name.localeCompare(b.name));
-        return modules.map(({ name, version, licenseName, body }) => {
-          const title = licenseName ? `${name}@${version} - ${licenseName}` : name;
-          return `${line}\n${title}\n${line}\n${body}`;
-        }).join('\n');
-      },
-      override: {
-        'jquery.are-you-sure@*': { licenseName: 'MIT' }, // https://github.com/codedance/jquery.AreYouSure/pull/147
-        'khroma@*': { licenseName: 'MIT' }, // https://github.com/fabiospampinato/khroma/pull/33
-      },
-      emitError: true,
-      allow: '(Apache-2.0 OR BSD-2-Clause OR BSD-3-Clause OR MIT OR ISC OR CPAL-1.0 OR Unlicense)',
-      ignore: [
-        'font-awesome',
-        'tslib',
-      ],
-    }) : new AddAssetPlugin('js/licenses.txt', `Licenses are disabled during development`),
+    //     const modules = [...goModules, ...jsModules].sort((a, b) => a.name.localeCompare(b.name));
+    //     return modules.map(({ name, version, licenseName, body }) => {
+    //       const title = licenseName ? `${name}@${version} - ${licenseName}` : name;
+    //       return `${line}\n${title}\n${line}\n${body}`;
+    //     }).join('\n');
+    //   },
+    //   override: {
+    //     'jquery.are-you-sure@*': { licenseName: 'MIT' }, // https://github.com/codedance/jquery.AreYouSure/pull/147
+    //     'khroma@*': { licenseName: 'MIT' }, // https://github.com/fabiospampinato/khroma/pull/33
+    //   },
+    //   emitError: true,
+    //   allow: '(Apache-2.0 OR BSD-2-Clause OR BSD-3-Clause OR MIT OR ISC OR CPAL-1.0 OR Unlicense)',
+    //   ignore: [
+    //     'font-awesome',
+    //     'tslib',
+    //   ],
+    // }) : new AddAssetPlugin('js/licenses.txt', `Licenses are disabled during development`),
   ],
   performance: {
     hints: false,
