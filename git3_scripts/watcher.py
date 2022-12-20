@@ -29,7 +29,7 @@ def main():
     N = 10000
     while True:
         current_block = web3.eth.block_number
-        for start in range(last_end + 1, current_block, N):
+        for start in range(last_end, current_block, N):
             event_filter = contract.events.RepoCreated.createFilter(
                 fromBlock=start,
                 toBlock=start + N if start + N < current_block else current_block,
