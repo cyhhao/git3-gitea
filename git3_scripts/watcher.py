@@ -28,71 +28,76 @@ def main():
     last_end = os.environ.get("last") or 4304571
     N = 10000
     while True:
-        current_block = web3.eth.block_number
-        for start in range(last_end, current_block, N):
-            event_filter = contract.events.RepoCreated.createFilter(
-                fromBlock=start,
-                toBlock=start + N if start + N < current_block else current_block,
-            )
-            for RepoCreated in event_filter.get_all_entries():
-                repoName = RepoCreated.args.repoName.decode()
-                owner = str(RepoCreated.args.owner)
-                print(
-                    "RepoCreated",
-                    RepoCreated.args.repoName.decode(),
+        try:
+            current_block = web3.eth.block_number
+            for start in range(last_end, current_block, N):
+                event_filter = contract.events.RepoCreated.createFilter(
+                    fromBlock=start,
+                    toBlock=start + N if start + N < current_block else current_block,
                 )
+                for RepoCreated in event_filter.get_all_entries():
+                    repoName = RepoCreated.args.repoName.decode()
+                    owner = str(RepoCreated.args.owner)
+                    print(
+                        "RepoCreated",
+                        RepoCreated.args.repoName.decode(),
+                    )
 
-                res = requests.post(
-                    "https://git3.link/api/v1/repos/migrate",
-                    headers={
-                        "Authorization": f"Basic {base_auth}",
-                        "Content-Type": "application/json",
-                    },
-                    json={
-                        "auth_password": "",
-                        "auth_token": "",
-                        "auth_username": "",
-                        "clone_addr": f"git3://{repoName}",
-                        "description": "",
-                        "issues": True,
-                        "labels": True,
-                        "lfs": False,
-                        "lfs_endpoint": "",
-                        "milestones": True,
-                        "mirror": True,
-                        "mirror_interval": "1h",
-                        "private": False,
-                        "pull_requests": True,
-                        "releases": True,
-                        "repo_name": repoName,
-                        "repo_owner": "git3.w3q",
-                        "service": "git",
-                        "uid": 0,
-                        "wiki": True,
-                    },
-                )
-                print(res.status_code, res.text)
-                print()
+                    res = requests.post(
+                        "https://git3.link/api/v1/repos/migrate",
+                        headers={
+                            "Authorization": f"Basic {base_auth}",
+                            "Content-Type": "application/json",
+                        },
+                        json={
+                            "auth_password": "",
+                            "auth_token": "",
+                            "auth_username": "",
+                            "clone_addr": f"git3://{repoName}",
+                            "description": "",
+                            "issues": True,
+                            "labels": True,
+                            "lfs": False,
+                            "lfs_endpoint": "",
+                            "milestones": True,
+                            "mirror": True,
+                            "mirror_interval": "1h",
+                            "private": False,
+                            "pull_requests": True,
+                            "releases": True,
+                            "repo_name": repoName,
+                            "repo_owner": "git3.w3q",
+                            "service": "git",
+                            "uid": 0,
+                            "wiki": True,
+                        },
+                    )
 
-            event_filter = contract.events.PushRef.createFilter(
-                fromBlock=start,
-                toBlock=start + N if start + N < current_block else current_block,
-            )
-            for PushRef in event_filter.get_all_entries():
-                repoName = PushRef.args.repoName.decode()
-                print(
-                    "PushRef",
-                    PushRef.args.repoName.decode(),
+                    print(res.status_code, res.text)
+                    print()
+
+                event_filter = contract.events.PushRef.createFilter(
+                    fromBlock=start,
+                    toBlock=start + N if start + N < current_block else current_block,
                 )
-                res = requests.post(
-                    f"https://git3.link/api/v1/repos/git3.w3q/{repoName}/mirror-sync",
-                    headers={
-                        "Authorization": f"Basic {base_auth}",
-                        "Content-Type": "application/json",
-                    },
-                )
-                print(res.status_code, res.text)
-                print()
+                for PushRef in event_filter.get_all_entries():
+                    repoName = PushRef.args.repoName.decode()
+                    print(
+                        "PushRef",
+                        PushRef.args.repoName.decode(),
+                    )
+                    res = requests.post(
+                        f"https://git3.link/api/v1/repos/git3.w3q/{repoName}/mirror-sync",
+                        headers={
+                            "Authorization": f"Basic {base_auth}",
+                            "Content-Type": "application/json",
+                        },
+                    )
+                    print(res.status_code, res.text)
+                    print()
+        except Exception as e:
+            print("[ERROR]", e)
+            continue
 
         last_end = current_block
         time.sleep(5)
