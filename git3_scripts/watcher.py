@@ -25,7 +25,7 @@ def main():
         raise Exception("base_auth not set")
     print(base_auth)
 
-    last_end = os.environ.get("last") or 4304571
+    last_end = os.environ.get("last") or 4839051
     N = 10000
     while True:
         try:
