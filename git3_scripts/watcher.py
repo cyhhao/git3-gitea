@@ -44,7 +44,7 @@ def main():
                     )
 
                     res = requests.post(
-                        "https://git3.link/api/v1/repos/migrate",
+                        "https://git3.sh/api/v1/repos/migrate",
                         headers={
                             "Authorization": f"Basic {base_auth}",
                             "Content-Type": "application/json",
@@ -87,7 +87,7 @@ def main():
                         PushRef.args.repoName.decode(),
                     )
                     res = requests.post(
-                        f"https://git3.link/api/v1/repos/git3.w3q/{repoName}/mirror-sync",
+                        f"https://git3.sh/api/v1/repos/git3.w3q/{repoName}/mirror-sync",
                         headers={
                             "Authorization": f"Basic {base_auth}",
                             "Content-Type": "application/json",
