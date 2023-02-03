@@ -78,7 +78,7 @@ You can try it out using [the online demo](https://try.gitea.io/).
     - MSSQL (>=2008R2 SP3)
     - TiDB (MySQL protocol)
   - Configuration file
-    - [app.ini](https://github.com/go-gitea/gitea/blob/main/custom/conf/app.example.ini)
+    - [app.ini](https://github.com/git3protocol/gitea/blob/main/custom/conf/app.example.ini)
   - Admin panel
     - Statistics
     - Actions
@@ -130,7 +130,7 @@ You can try it out using [the online demo](https://try.gitea.io/).
         - Clean up old archives
   - Environment variables
   - Command line options
-- Multi-language support ([21 languages](https://github.com/go-gitea/gitea/tree/main/options/locale))
+- Multi-language support ([21 languages](https://github.com/git3protocol/gitea/tree/main/options/locale))
 - [Mermaid](https://mermaidjs.github.io/) diagrams in Markdown
 - Math syntax in Markdown
 - Mail service

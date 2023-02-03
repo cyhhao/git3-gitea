@@ -23,26 +23,26 @@ Gogs, version 0.9.146 and older, can be easily migrated to Gitea.
 
 There are some basic steps to follow. On a Linux system run as the Gogs user:
 
-* Create a Gogs backup with `gogs backup`. This creates `gogs-backup-[timestamp].zip` file
+- Create a Gogs backup with `gogs backup`. This creates `gogs-backup-[timestamp].zip` file
   containing all important Gogs data. You would need it if you wanted to move to the `gogs` back later.
-* Download the file matching the destination platform from the [downloads page](https://dl.gitea.io/gitea/).
- It should be `1.0.x` version. Migrating from `gogs` to any other version is impossible.
-* Put the binary at the desired install location.
-* Copy `gogs/custom/conf/app.ini` to `gitea/custom/conf/app.ini`.
-* Copy custom `templates, public` from `gogs/custom/` to `gitea/custom/`.
-* For any other custom folders, such as `gitignore, label, license, locale, readme` in
+- Download the file matching the destination platform from the [downloads page](https://dl.gitea.io/gitea/).
+  It should be `1.0.x` version. Migrating from `gogs` to any other version is impossible.
+- Put the binary at the desired install location.
+- Copy `gogs/custom/conf/app.ini` to `gitea/custom/conf/app.ini`.
+- Copy custom `templates, public` from `gogs/custom/` to `gitea/custom/`.
+- For any other custom folders, such as `gitignore, label, license, locale, readme` in
   `gogs/custom/conf`, copy them to `gitea/custom/options`.
-* Copy `gogs/data/` to `gitea/data/`. It contains issue attachments and avatars.
-* Verify by starting Gitea with `gitea web`.
-* Enter Gitea admin panel on the UI, run `Rewrite '.ssh/authorized_keys' file`.
-* Launch every major version of the binary ( `1.1.4` → `1.2.3` → `1.3.4` → `1.4.2` →  etc ) to migrate database.
-* If custom or config path was changed, run `Rewrite all update hook of repositories`.
+- Copy `gogs/data/` to `gitea/data/`. It contains issue attachments and avatars.
+- Verify by starting Gitea with `gitea web`.
+- Enter Gitea admin panel on the UI, run `Rewrite '.ssh/authorized_keys' file`.
+- Launch every major version of the binary ( `1.1.4` → `1.2.3` → `1.3.4` → `1.4.2` → etc ) to migrate database.
+- If custom or config path was changed, run `Rewrite all update hook of repositories`.
 
 ## Change gogs specific information
 
-* Rename `gogs-repositories/` to `gitea-repositories/`
-* Rename `gogs-data/` to `gitea-data/`
-* In `gitea/custom/conf/app.ini` change:
+- Rename `gogs-repositories/` to `gitea-repositories/`
+- Rename `gogs-data/` to `gitea-data/`
+- In `gitea/custom/conf/app.ini` change:
 
   FROM:
 
@@ -70,7 +70,7 @@ There are some basic steps to follow. On a Linux system run as the Gogs user:
   ROOT_PATH = /home/:USER/gitea/log
   ```
 
-* Verify by starting Gitea with `gitea web`
+- Verify by starting Gitea with `gitea web`
 
 ## Upgrading to most recent `gitea` version
 
@@ -86,27 +86,27 @@ Then repeat the procedure, but this time using the [latest release](https://dl.g
 ## Upgrading from a more recent version of Gogs
 
 Upgrading from a more recent version of Gogs is also possible, but requires a bit more work.
-See [#4286](https://github.com/go-gitea/gitea/issues/4286).
+See [#4286](https://github.com/orgs/git3protocol/discussions/4286).
 
 ## Troubleshooting
 
-* If errors are encountered relating to custom templates in the `gitea/custom/templates`
+- If errors are encountered relating to custom templates in the `gitea/custom/templates`
   folder, try moving the templates causing the errors away one by one. They may not be
   compatible with Gitea or an update.
 
 ## Add Gitea to startup on Unix
 
-Update the appropriate file from [gitea/contrib](https://github.com/go-gitea/gitea/tree/main/contrib)
+Update the appropriate file from [gitea/contrib](https://github.com/git3protocol/gitea/tree/main/contrib)
 with the right environment variables.
 
 For distros with systemd:
 
-* Copy the updated script to `/etc/systemd/system/gitea.service`
-* Add the service to the startup with: `sudo systemctl enable gitea`
-* Disable old gogs startup script: `sudo systemctl disable gogs`
+- Copy the updated script to `/etc/systemd/system/gitea.service`
+- Add the service to the startup with: `sudo systemctl enable gitea`
+- Disable old gogs startup script: `sudo systemctl disable gogs`
 
 For distros with SysVinit:
 
-* Copy the updated script to `/etc/init.d/gitea`
-* Add the service to the startup with: `sudo rc-update add gitea`
-* Disable old gogs startup script: `sudo rc-update del gogs`
+- Copy the updated script to `/etc/init.d/gitea`
+- Add the service to the startup with: `sudo rc-update add gitea`
+- Disable old gogs startup script: `sudo rc-update del gogs`

@@ -263,7 +263,7 @@ documented above, please note that `db` must be used as the database hostname.
 
 ## Customization
 
-Customization files described [here](https://docs.gitea.io/en-us/customizing-gitea/) should
+Customization files described [here](https://docs.git3.sh/en-us/customizing-gitea/) should
 be placed in `/data/gitea` directory. If using host volumes, it's quite easy to access these
 files; for named volumes, this is done through another container or by direct access at
 `/var/lib/docker/volumes/gitea_gitea/_data`. The configuration file will be saved at
@@ -285,7 +285,7 @@ docker-compose up -d
 
 ## Managing Deployments With Environment Variables
 
-In addition to the environment variables above, any settings in `app.ini` can be set or overridden with an environment variable of the form: `GITEA__SECTION_NAME__KEY_NAME`. These settings are applied each time the docker container starts. Full information [here](https://github.com/go-gitea/gitea/tree/master/contrib/environment-to-ini).
+In addition to the environment variables above, any settings in `app.ini` can be set or overridden with an environment variable of the form: `GITEA__SECTION_NAME__KEY_NAME`. These settings are applied each time the docker container starts. Full information [here](https://github.com/git3protocol/gitea/tree/master/contrib/environment-to-ini).
 
 These environment variables can be passed to the docker container in `docker-compose.yml`. The following example will enable an smtp mail server if the required env variables `GITEA__mailer__FROM`, `GITEA__mailer__HOST`, `GITEA__mailer__PASSWD` are set on the host or in a `.env` file in the same directory as `docker-compose.yml`:
 
@@ -303,7 +303,7 @@ services:
     - GITEA__mailer__PASSWD="""${GITEA__mailer__PASSWD:?GITEA__mailer__PASSWD not set}"""
 ```
 
-Gitea will generate new secrets/tokens for every new installation automatically and write them into the app.ini. If you want to set the secrets/tokens manually, you can use the following docker commands to use of Gitea's built-in [generate utility functions](https://docs.gitea.io/en-us/command-line/#generate). Do not lose/change your SECRET_KEY after the installation, otherwise the encrypted data can not be decrypted anymore.
+Gitea will generate new secrets/tokens for every new installation automatically and write them into the app.ini. If you want to set the secrets/tokens manually, you can use the following docker commands to use of Gitea's built-in [generate utility functions](https://docs.git3.sh/en-us/command-line/#generate). Do not lose/change your SECRET_KEY after the installation, otherwise the encrypted data can not be decrypted anymore.
 
 The following commands will output a new `SECRET_KEY` and `INTERNAL_TOKEN` to `stdout`, which you can then place in your environment variables.
 
@@ -313,7 +313,7 @@ docker run -it --rm  gitea/gitea:1 gitea generate secret INTERNAL_TOKEN
 ```
 
 ```yaml
-...
+---
 services:
   server:
     environment:
@@ -411,13 +411,13 @@ Here is a detailed explanation what is happening when a SSH request is made:
 
 1. The client adds their SSH public key to Gitea using the webpage.
 2. Gitea in the container will add an entry for this key to the `.ssh/authorized_keys` file of its running user, `git`.
-    - However, because `/home/git/.ssh/` on the host is mounted as `/data/git/.ssh` this means that the key has been added to the host `git` user's `authorized_keys` file too.
+   - However, because `/home/git/.ssh/` on the host is mounted as `/data/git/.ssh` this means that the key has been added to the host `git` user's `authorized_keys` file too.
 3. This entry has the public key, but also has a `command=` option.
-    - This command matches the location of the Gitea binary on the container, but also the location of the shim on the host.
+   - This command matches the location of the Gitea binary on the container, but also the location of the shim on the host.
 4. The client then makes an SSH request to the host SSH server using the `git` user, e.g. `git clone git@domain:user/repo.git`.
 5. The client will attempt to authenticate with the server, passing one or more public keys in turn to the host.
 6. For each key the client provides, the host SSH server will first check its configuration for an `AuthorizedKeysCommand` to see if the public key matches, and then the host `git` user's `authorized_keys` file.
-    - Because `/home/git/.ssh/` on the host is mounted as `/data/git/.ssh` this means that the key they added to the Gitea web will be found
+   - Because `/home/git/.ssh/` on the host is mounted as `/data/git/.ssh` this means that the key they added to the Gitea web will be found
 7. The first entry that matches will be selected, and assuming this is a Gitea entry, the `command=` will now be executed.
 8. The host SSH server creates a user session for the `git` user, and using the shell for the host `git` user runs the `command=`
 9. This means that the host runs the host `/usr/local/bin/gitea` shim that opens an SSH from the host to container passing the rest of the command arguments directly to `/usr/local/bin/gitea` on the container.
@@ -440,7 +440,7 @@ Never add the `Gitea Host Key` as a SSH key to a user on the Gitea interface.
 In this option, the idea is that the host simply uses the `authorized_keys` that gitea creates but at step 8 above we change the shell that the host runs to ssh directly into the docker and then run the shell there. This means that the `gitea` that is then run is the real docker `gitea`.
 
 - In this case we setup as per SSHing Shim except instead of creating `/usr/local/bin/gitea`
-we create a new shell for the git user. As an administrative user on the host run:
+  we create a new shell for the git user. As an administrative user on the host run:
 
   ```bash
   cat <<"EOF" | sudo tee /home/git/ssh-shell
@@ -458,13 +458,13 @@ Here is a detailed explanation what is happening when a SSH request is made:
 
 1. The client adds their SSH public key to Gitea using the webpage.
 2. Gitea in the container will add an entry for this key to the `.ssh/authorized_keys` file of its running user, `git`.
-    - However, because `/home/git/.ssh/` on the host is mounted as `/data/git/.ssh` this means that the key has been added to the host `git` user's `authorized_keys` file too.
+   - However, because `/home/git/.ssh/` on the host is mounted as `/data/git/.ssh` this means that the key has been added to the host `git` user's `authorized_keys` file too.
 3. This entry has the public key, but also has a `command=` option.
-    - This command matches the location of the Gitea binary on the container.
+   - This command matches the location of the Gitea binary on the container.
 4. The client then makes an SSH request to the host SSH server using the `git` user, e.g. `git clone git@domain:user/repo.git`.
 5. The client will attempt to authenticate with the server, passing one or more public keys in turn to the host.
 6. For each key the client provides, the host SSH server will first check its configuration for an `AuthorizedKeysCommand` to see if the public key matches, and then the host `git` user's `authorized_keys` file.
-    - Because `/home/git/.ssh/` on the host is mounted as `/data/git/.ssh` this means that the key they added to the Gitea web will be found
+   - Because `/home/git/.ssh/` on the host is mounted as `/data/git/.ssh` this means that the key they added to the Gitea web will be found
 7. The first entry that matches will be selected, and assuming this is a Gitea entry, the `command=` will now be executed.
 8. The host SSH server creates a user session for the `git` user, and using the shell for the host `git` user runs the `command=`
 9. The shell of the host `git` user is now our `ssh-shell` which opens an SSH connection from the host to container, (which opens a shell on the container for the container `git`).
@@ -499,13 +499,13 @@ Here is a detailed explanation what is happening when a SSH request is made:
 
 1. The client adds their SSH public key to Gitea using the webpage.
 2. Gitea in the container will add an entry for this key to the `.ssh/authorized_keys` file of its running user, `git`.
-    - However, because `/home/git/.ssh/` on the host is mounted as `/data/git/.ssh` this means that the key has been added to the host `git` user's `authorized_keys` file too.
+   - However, because `/home/git/.ssh/` on the host is mounted as `/data/git/.ssh` this means that the key has been added to the host `git` user's `authorized_keys` file too.
 3. This entry has the public key, but also has a `command=` option.
-    - This command matches the location of the Gitea binary on the container.
+   - This command matches the location of the Gitea binary on the container.
 4. The client then makes an SSH request to the host SSH server using the `git` user, e.g. `git clone git@domain:user/repo.git`.
 5. The client will attempt to authenticate with the server, passing one or more public keys in turn to the host.
 6. For each key the client provides, the host SSH server will first check its configuration for an `AuthorizedKeysCommand` to see if the public key matches, and then the host `git` user's `authorized_keys` file.
-    - Because `/home/git/.ssh/` on the host is mounted as `/data/git/.ssh` this means that the key they added to the Gitea web will be found
+   - Because `/home/git/.ssh/` on the host is mounted as `/data/git/.ssh` this means that the key they added to the Gitea web will be found
 7. The first entry that matches will be selected, and assuming this is a Gitea entry, the `command=` will now be executed.
 8. The host SSH server creates a user session for the `git` user, and using the shell for the host `git` user runs the `command=`
 9. The shell of the host `git` user is now our `docker-shell` which uses `docker exec` to open a shell for the `git` user on the container.
@@ -534,7 +534,7 @@ In this option, the idea is that the host SSH uses an `AuthorizedKeysCommand` in
 
 - On the host create a `git` user with permission to run `docker exec`.
 - We will again assume that the Gitea container is called `gitea`.
-- Modify the `git` user's shell to forward commands to the `sh` executable inside the container using `docker exec`.  As an administrative user on the host run:
+- Modify the `git` user's shell to forward commands to the `sh` executable inside the container using `docker exec`. As an administrative user on the host run:
 
   ```bash
   cat <<"EOF" | sudo tee /home/git/docker-shell
@@ -547,7 +547,7 @@ In this option, the idea is that the host SSH uses an `AuthorizedKeysCommand` in
 
 Now all attempts to login as the `git` user on the host will be forwarded to the docker - including the `SSH_ORIGINAL_COMMAND`. We now need to set-up SSH authentication on the host.
 
-We will do this by leveraging the [SSH AuthorizedKeysCommand](https://docs.gitea.io/en-us/command-line/#keys) to match the keys against those accepted by Gitea.
+We will do this by leveraging the [SSH AuthorizedKeysCommand](https://docs.git3.sh/en-us/command-line/#keys) to match the keys against those accepted by Gitea.
 
 Add the following block to `/etc/ssh/sshd_config`, on the host:
 

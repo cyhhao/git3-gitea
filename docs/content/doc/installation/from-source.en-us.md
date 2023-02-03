@@ -47,7 +47,7 @@ simplest way of doing this is to use Git directly as we no longer have to have
 Gitea built from within the GOPATH.
 
 ```bash
-git clone https://github.com/go-gitea/gitea
+git clone https://github.com/git3protocol/gitea
 ```
 
 (Previous versions of this document recommended using `go get`. This is
@@ -65,7 +65,7 @@ git checkout v{{< version >}}
 ```
 
 To validate a Pull Request, first enable the new branch (`xyz` is the PR id;
-for example `2663` for [#2663](https://github.com/go-gitea/gitea/pull/2663)):
+for example `2663` for [#2663](https://github.com/git3protocol/gitea/pull/2663)):
 
 ```bash
 git fetch origin pull/xyz/head:pr-xyz
@@ -89,7 +89,7 @@ To build from source, the following programs must be present on the system:
 - `node` {{< min-node-version >}} or higher with `npm`, see [here](https://nodejs.org/en/download/)
 - `make`, see [here]({{< relref "doc/developers/hacking-on-gitea.en-us.md" >}}#installing-make)
 
-Various [make tasks](https://github.com/go-gitea/gitea/blob/main/Makefile)
+Various [make tasks](https://github.com/git3protocol/gitea/blob/main/Makefile)
 are provided to keep the build process as simple as possible.
 
 Depending on requirements, the following build tags can be included.

@@ -691,7 +691,7 @@ func GetTagList(ctx *context.Context) {
 }
 
 // FIXME: Workaround to be removed in v1.20
-// https://github.com/go-gitea/gitea/issues/19586
+// https://github.com/orgs/git3protocol/discussions/19586
 func workaroundGetContainerBlob(ctx *context.Context, opts *container_model.BlobSearchOptions) (*packages_model.PackageFileDescriptor, error) {
 	blob, err := container_model.GetContainerBlob(ctx, opts)
 	if err != nil {

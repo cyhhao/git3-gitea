@@ -357,7 +357,7 @@ func generateAdditionalHeaders(ctx *mailCommentContext, reason string, recipient
 
 		// https://datatracker.ietf.org/doc/html/rfc2369
 		"List-Archive": fmt.Sprintf("<%s>", repo.HTMLURL()),
-		//"List-Post": https://github.com/go-gitea/gitea/pull/13585
+		//"List-Post": https://github.com/git3protocol/gitea/pull/13585
 		"List-Unsubscribe": ctx.Issue.HTMLURL(),
 
 		"X-Mailer":                  "Gitea",

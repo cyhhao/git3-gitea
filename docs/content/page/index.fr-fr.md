@@ -70,7 +70,7 @@ Le but de ce projet est de fournir de la manière la plus simple, la plus rapide
     - MSSQL
     - [TiDB](https://github.com/pingcap/tidb) (MySQL protocol)
   - Fichier de configuration
-    - Voir [ici](https://github.com/go-gitea/gitea/blob/master/custom/conf/app.example.ini)
+    - Voir [ici](https://github.com/git3protocol/gitea/blob/master/custom/conf/app.example.ini)
   - Panel d'administration
     - Statistiques
     - Actions
@@ -122,7 +122,7 @@ Le but de ce projet est de fournir de la manière la plus simple, la plus rapide
         - Nettoyage des anciennes archives
   - Variables d'environement
   - Options de ligne de commande
-- Internationalisation ([21 langues](https://github.com/go-gitea/gitea/tree/master/options/locale))
+- Internationalisation ([21 langues](https://github.com/git3protocol/gitea/tree/master/options/locale))
 - Courriel
   - Notifications
   - Confirmation d'inscription

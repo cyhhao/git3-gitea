@@ -23,7 +23,7 @@ menu:
 
 To get a quick working development environment you could use Gitpod.
 
-[![Open in Gitpod](/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/go-gitea/gitea)
+[![Open in Gitpod](/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/git3protocol/gitea)
 
 ## Installing go
 
@@ -88,7 +88,7 @@ One of these three distributions of Make will run on Windows:
 The recommended method of obtaining the source code is by using `git clone`.
 
 ```bash
-git clone https://github.com/go-gitea/gitea
+git clone https://github.com/git3protocol/gitea
 ```
 
 (Since the advent of go modules, it is no longer necessary to build go projects
@@ -97,7 +97,7 @@ from within the `$GOPATH`, hence the `go get` approach is no longer recommended.
 ## Forking Gitea
 
 Download the main Gitea source code as above. Then, fork the
-[Gitea repository](https://github.com/go-gitea/gitea) on GitHub,
+[Gitea repository](https://github.com/git3protocol/gitea) on GitHub,
 and either switch the git remote origin for your fork or add your fork as another remote:
 
 ```bash
@@ -133,7 +133,7 @@ TAGS="bindata sqlite sqlite_unlock_notify" make build
 
 The `build` target will execute both `frontend` and `backend` sub-targets. If the `bindata` tag is present, the frontend files will be compiled into the binary. It is recommended to leave out the tag when doing frontend development so that changes will be reflected.
 
-See `make help` for all available `make` targets. Also see [`.drone.yml`](https://github.com/go-gitea/gitea/blob/main/.drone.yml) to see how our continuous integration works.
+See `make help` for all available `make` targets. Also see [`.drone.yml`](https://github.com/git3protocol/gitea/blob/main/.drone.yml) to see how our continuous integration works.
 
 ## Building continuously
 
@@ -230,7 +230,7 @@ documentation for these using [go-swagger](https://goswagger.io/) comments.
 The structure of these comments is described in the [specification](https://goswagger.io/use/spec.html#annotation-syntax).
 If you want more information about the Swagger structure, you can look at the
 [Swagger 2.0 Documentation](https://swagger.io/docs/specification/2-0/basic-structure/)
-or compare with a previous PR adding a new API endpoint, e.g. [PR #5483](https://github.com/go-gitea/gitea/pull/5843/files#diff-2e0a7b644cf31e1c8ef7d76b444fe3aaR20)
+or compare with a previous PR adding a new API endpoint, e.g. [PR #5483](https://github.com/git3protocol/gitea/pull/5843/files#diff-2e0a7b644cf31e1c8ef7d76b444fe3aaR20)
 
 You should be careful not to break the API for downstream users which depend
 on a stable API. In general, this means additions are acceptable, but deletions
@@ -315,7 +315,7 @@ will run the integration tests in an SQLite environment. Integration tests
 require `git lfs` to be installed. Other database tests are available but
 may need adjustment to the local environment.
 
-Take a look at [`tests/integration/README.md`](https://github.com/go-gitea/gitea/blob/main/tests/integration/README.md)
+Take a look at [`tests/integration/README.md`](https://github.com/git3protocol/gitea/blob/main/tests/integration/README.md)
 for more information and how to run a single test.
 
 ### Testing for a PR
@@ -345,7 +345,7 @@ be cleaned up.
 
 A `launch.json` and `tasks.json` are provided within `contrib/ide/vscode` for
 Visual Studio Code. Look at
-[`contrib/ide/README.md`](https://github.com/go-gitea/gitea/blob/main/contrib/ide/README.md)
+[`contrib/ide/README.md`](https://github.com/git3protocol/gitea/blob/main/contrib/ide/README.md)
 for more information.
 
 ## GoLand
@@ -370,7 +370,7 @@ able to help fix issues directly.
 
 Any PR requires two approvals from the Gitea maintainers and needs to pass the
 continuous integration. Take a look at our
-[`CONTRIBUTING.md`](https://github.com/go-gitea/gitea/blob/main/CONTRIBUTING.md)
+[`CONTRIBUTING.md`](https://github.com/git3protocol/gitea/blob/main/CONTRIBUTING.md)
 document.
 
 If you need more help pop on to [Discord](https://discord.gg/gitea) #Develop

@@ -18,7 +18,7 @@ menu:
 ## 开启/配置 API 访问
 
 通常情况下， `ENABLE_SWAGGER` 默认开启并且参数 `MAX_RESPONSE_ITEMS` 默认为 50。您可以从 [Config Cheat
-Sheet](https://docs.gitea.io/en-us/config-cheat-sheet/) 中获取更多配置相关信息。
+Sheet](https://docs.git3.sh/en-us/config-cheat-sheet/) 中获取更多配置相关信息。
 
 ## 通过 API 认证
 
@@ -30,7 +30,7 @@ Gitea 支持以下几种 API 认证方式：
 - 通过指定 `Authorization: token ...` HTTP header 方式
 
 以上提及的认证方法接受相同的 apiKey token 类型，您可以在编码时通过查阅代码更好地理解这一点。
-Gitea 调用解析查询参数以及头部信息来获取 token 的代码可以在 [modules/auth/auth.go](https://github.com/go-gitea/gitea/blob/6efdcaed86565c91a3dc77631372a9cc45a58e89/modules/auth/auth.go#L47) 中找到。
+Gitea 调用解析查询参数以及头部信息来获取 token 的代码可以在 [modules/auth/auth.go](https://github.com/git3protocol/gitea/blob/6efdcaed86565c91a3dc77631372a9cc45a58e89/modules/auth/auth.go#L47) 中找到。
 
 您可以通过您的 gitea web 界面来创建 apiKey token：
 `Settings | Applications | Generate New Token`.
@@ -57,7 +57,7 @@ curl "http://localhost:4000/api/v1/repos/test1/test1/issues" \
 ## 通过 API 列出您发布的令牌
 
 `/users/:name/tokens` 是一个特殊的接口，需要您使用 basic authentication 进行认证，具体原因在 issue 中
-[#3842](https://github.com/go-gitea/gitea/issues/3842#issuecomment-397743346) 有所提及，使用方法如下所示：
+[#3842](https://github.com/orgs/git3protocol/discussions/3842#issuecomment-397743346) 有所提及，使用方法如下所示：
 
 ### 使用 Basic authentication 认证：
 

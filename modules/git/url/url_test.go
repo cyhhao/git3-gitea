@@ -64,7 +64,7 @@ func TestParseGitURLs(t *testing.T) {
 			},
 		},
 		{
-			kase: "ssh://git@github.com/go-gitea/gitea.git",
+			kase: "ssh://git@github.com/git3protocol/gitea.git",
 			expected: &GitURL{
 				URL: &url.URL{
 					Scheme: "ssh",
@@ -108,7 +108,7 @@ func TestParseGitURLs(t *testing.T) {
 			},
 		},
 		{
-			kase: "https://github.com/go-gitea/gitea.git",
+			kase: "https://github.com/git3protocol/gitea.git",
 			expected: &GitURL{
 				URL: &url.URL{
 					Scheme: "https",
@@ -119,7 +119,7 @@ func TestParseGitURLs(t *testing.T) {
 			},
 		},
 		{
-			kase: "https://git:git@github.com/go-gitea/gitea.git",
+			kase: "https://git:git@github.com/git3protocol/gitea.git",
 			expected: &GitURL{
 				URL: &url.URL{
 					Scheme: "https",
@@ -143,7 +143,7 @@ func TestParseGitURLs(t *testing.T) {
 		},
 
 		{
-			kase: "git://github.com/go-gitea/gitea.git",
+			kase: "git://github.com/git3protocol/gitea.git",
 			expected: &GitURL{
 				URL: &url.URL{
 					Scheme: "git",

@@ -39,7 +39,7 @@ Il est temps de démarrer votre instance Docker, c'est un processus assez simple
 docker run -d --name=gitea -p 10022:22 -p 10080:3000 -v /var/lib/gitea:/data gitea/gitea:latest
 ```
 
-Vous devriez avoir une instance fonctionnelle de Gitea. Pour accèder à l'interface web, visitez l'adresse http://hostname:10080 avec votre navigateur web préféré. Si vous voulez clôner un dépôt, vous pouvez le faire avec la commande  `git clone ssh://git@hostname:10022/username/repo.git`.
+Vous devriez avoir une instance fonctionnelle de Gitea. Pour accèder à l'interface web, visitez l'adresse http://hostname:10080 avec votre navigateur web préféré. Si vous voulez clôner un dépôt, vous pouvez le faire avec la commande `git clone ssh://git@hostname:10022/username/repo.git`.
 
 ## Named Volumes
 
@@ -103,7 +103,7 @@ Vous devriez maintenant avoir deux conteneurs Docker pour Gitea et PostgreSQL pl
 
 # Personnalisation
 
-Les fichier personnalisés ([voir les instructions](https://docs.gitea.io/en-us/customizing-gitea/)) peuvent être placés dans le répertoire `/data/gitea`.
+Les fichier personnalisés ([voir les instructions](https://docs.git3.sh/en-us/customizing-gitea/)) peuvent être placés dans le répertoire `/data/gitea`.
 
 Le fichier de configuration sera sauvegardé à l'emplacement suivant : `/data/gitea/conf/app.ini`
 

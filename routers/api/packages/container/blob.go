@@ -36,7 +36,7 @@ func saveAsPackageBlob(hsr packages_module.HashedSizeReader, pi *packages_servic
 	var uploadVersion *packages_model.PackageVersion
 
 	// FIXME: Replace usage of mutex with database transaction
-	// https://github.com/go-gitea/gitea/pull/21862
+	// https://github.com/git3protocol/gitea/pull/21862
 	uploadVersionMutex.Lock()
 	err := db.WithTx(db.DefaultContext, func(ctx context.Context) error {
 		created := true
@@ -94,7 +94,7 @@ func saveAsPackageBlob(hsr packages_module.HashedSizeReader, pi *packages_servic
 			return err
 		}
 		// FIXME: Workaround to be removed in v1.20
-		// https://github.com/go-gitea/gitea/issues/19586
+		// https://github.com/orgs/git3protocol/discussions/19586
 		if exists {
 			err = contentStore.Has(packages_module.BlobHash256Key(pb.HashSHA256))
 			if err != nil && (errors.Is(err, util.ErrNotExist) || errors.Is(err, os.ErrNotExist)) {

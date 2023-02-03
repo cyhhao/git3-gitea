@@ -1,4 +1,4 @@
-baseurl: https://docs.gitea.io/
+baseurl: https://docs.git3.sh/
 languageCode: en-us
 title: Docs
 theme: gitea
@@ -17,13 +17,13 @@ permalinks:
 params:
   description: Git with a cup of tea
   author: The Gitea Authors
-  website: https://docs.gitea.io
+  website: https://docs.git3.sh
   version: 1.17.3
   minGoVersion: 1.18
   goVersion: 1.19
   minNodeVersion: 14
   search: nav
-  repo: "https://github.com/go-gitea/gitea"
+  repo: "https://github.com/git3protocol/gitea"
   docContentPath: "docs/content"
 
 outputs:

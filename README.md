@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://gitea.io/">
-    <img alt="Gitea" src="https://raw.githubusercontent.com/go-gitea/gitea/main/public/img/gitea.svg" width="220"/>
+    <img alt="Gitea" src="https://raw.githubusercontent.com/go-gitea/gitea/main/public/img/git3.svg" width="220"/>
   </a>
 </p>
 <h1 align="center">Gitea - Git with a cup of tea</h1>
@@ -21,8 +21,8 @@
   <a href="https://godoc.org/code.gitea.io/gitea" title="GoDoc">
     <img src="https://godoc.org/code.gitea.io/gitea?status.svg">
   </a>
-  <a href="https://github.com/go-gitea/gitea/releases/latest" title="GitHub release">
-    <img src="https://img.shields.io/github/release/go-gitea/gitea.svg">
+  <a href="https://github.com/git3protocol/gitea/releases/latest" title="GitHub release">
+    <img src="https://img.shields.io/github/release/go-gitea/git3.svg">
   </a>
   <a href="https://www.codetriage.com/go-gitea/gitea" title="Help Contribute to Open Source">
     <img src="https://www.codetriage.com/go-gitea/gitea/badges/users.svg">
@@ -33,7 +33,7 @@
   <a href="https://opensource.org/licenses/MIT" title="License: MIT">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg">
   </a>
-  <a href="https://gitpod.io/#https://github.com/go-gitea/gitea">
+  <a href="https://gitpod.io/#https://github.com/git3protocol/gitea">
   <img
     src="https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod"
     alt="Contribute with Gitpod"
@@ -42,8 +42,8 @@
   <a href="https://crowdin.com/project/gitea" title="Crowdin">
     <img src="https://badges.crowdin.net/gitea/localized.svg">
   </a>
-  <a href="https://www.tickgit.com/browse?repo=github.com/go-gitea/gitea&branch=main" title="TODOs">
-    <img src="https://badgen.net/https/api.tickgit.com/badgen/github.com/go-gitea/gitea/main">
+  <a href="https://www.tickgit.com/browse?repo=github.com/git3protocol/gitea&branch=main" title="TODOs">
+    <img src="https://badgen.net/https/api.tickgit.com/badgen/github.com/git3protocol/gitea/main">
   </a>
   <a href="https://www.bountysource.com/teams/gitea" title="Bountysource">
     <img src="https://img.shields.io/bountysource/team/gitea/activity">
@@ -86,7 +86,7 @@ When building from the official source tarballs which include pre-built frontend
 
 Parallelism (`make -j <num>`) is not supported.
 
-More info: https://docs.gitea.io/en-us/install-from-source/
+More info: https://docs.git3.sh/en-us/install-from-source/
 
 ## Using
 
@@ -110,14 +110,14 @@ Translations are done through Crowdin. If you want to translate to a new languag
 
 You can also just create an issue for adding a language or ask on discord on the #translation channel. If you need context or find some translation issues, you can leave a comment on the string or ask on Discord. For general translation questions there is a section in the docs. Currently a bit empty but we hope to fill it as questions pop up.
 
-https://docs.gitea.io/en-us/translation-guidelines/
+https://docs.git3.sh/en-us/translation-guidelines/
 
 [![Crowdin](https://badges.crowdin.net/gitea/localized.svg)](https://crowdin.com/project/gitea)
 
 ## Further information
 
-For more information and instructions about how to install Gitea, please look at our [documentation](https://docs.gitea.io/en-us/).
-If you have questions that are not covered by the documentation, you can get in contact with us on our [Discord server](https://discord.gg/Gitea) or create  a post in the [discourse forum](https://discourse.gitea.io/).
+For more information and instructions about how to install Gitea, please look at our [documentation](https://docs.git3.sh/en-us/).
+If you have questions that are not covered by the documentation, you can get in contact with us on our [Discord server](https://discord.gg/Gitea) or create a post in the [discourse forum](https://discourse.gitea.io/).
 
 We maintain a list of Gitea-related projects at [gitea/awesome-gitea](https://gitea.com/gitea/awesome-gitea).
 
@@ -128,7 +128,7 @@ The official Gitea CLI is developed at [gitea/tea](https://gitea.com/gitea/tea).
 ## Authors
 
 - [Maintainers](https://github.com/orgs/go-gitea/people)
-- [Contributors](https://github.com/go-gitea/gitea/graphs/contributors)
+- [Contributors](https://github.com/git3protocol/gitea/graphs/contributors)
 - [Translators](options/locale/TRANSLATORS)
 
 ## Backers
@@ -161,20 +161,20 @@ Gitea is pronounced [/ɡɪ’ti:/](https://youtu.be/EM71-2uDAoY) as in "gi-tea" 
 
 **Why is this not hosted on a Gitea instance?**
 
-We're [working on it](https://github.com/go-gitea/gitea/issues/1029).
+We're [working on it](https://github.com/orgs/git3protocol/discussions/1029).
 
 ## License
 
 This project is licensed under the MIT License.
-See the [LICENSE](https://github.com/go-gitea/gitea/blob/main/LICENSE) file
+See the [LICENSE](https://github.com/git3protocol/gitea/blob/main/LICENSE) file
 for the full license text.
 
 ## Screenshots
 
 Looking for an overview of the interface? Check it out!
 
-|![Dashboard](https://dl.gitea.io/screenshots/home_timeline.png)|![User Profile](https://dl.gitea.io/screenshots/user_profile.png)|![Global Issues](https://dl.gitea.io/screenshots/global_issues.png)|
-|:---:|:---:|:---:|
-|![Branches](https://dl.gitea.io/screenshots/branches.png)|![Web Editor](https://dl.gitea.io/screenshots/web_editor.png)|![Activity](https://dl.gitea.io/screenshots/activity.png)|
-|![New Migration](https://dl.gitea.io/screenshots/migration.png)|![Migrating](https://dl.gitea.io/screenshots/migration.gif)|![Pull Request View](https://image.ibb.co/e02dSb/6.png)
-![Pull Request Dark](https://dl.gitea.io/screenshots/pull_requests_dark.png)|![Diff Review Dark](https://dl.gitea.io/screenshots/review_dark.png)|![Diff Dark](https://dl.gitea.io/screenshots/diff_dark.png)|
+|       ![Dashboard](https://dl.gitea.io/screenshots/home_timeline.png)        |  ![User Profile](https://dl.gitea.io/screenshots/user_profile.png)   | ![Global Issues](https://dl.gitea.io/screenshots/global_issues.png) |
+| :--------------------------------------------------------------------------: | :------------------------------------------------------------------: | :-----------------------------------------------------------------: |
+|          ![Branches](https://dl.gitea.io/screenshots/branches.png)           |    ![Web Editor](https://dl.gitea.io/screenshots/web_editor.png)     |      ![Activity](https://dl.gitea.io/screenshots/activity.png)      |
+|       ![New Migration](https://dl.gitea.io/screenshots/migration.png)        |     ![Migrating](https://dl.gitea.io/screenshots/migration.gif)      |       ![Pull Request View](https://image.ibb.co/e02dSb/6.png)       |
+| ![Pull Request Dark](https://dl.gitea.io/screenshots/pull_requests_dark.png) | ![Diff Review Dark](https://dl.gitea.io/screenshots/review_dark.png) |     ![Diff Dark](https://dl.gitea.io/screenshots/diff_dark.png)     |

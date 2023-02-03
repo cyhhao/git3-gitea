@@ -71,7 +71,7 @@ Gitea 是從 [Gogs](http://gogs.io) Fork 出來的，請閱讀部落格文章 [G
     - MSSQL
     - TiDB（MySQL 協議）
   - 設定檔
-    - [app.ini](https://github.com/go-gitea/gitea/blob/master/custom/conf/app.example.ini)
+    - [app.ini](https://github.com/git3protocol/gitea/blob/master/custom/conf/app.example.ini)
   - 管理員面板
     - 系統摘要
     - 維護操作
@@ -123,7 +123,7 @@ Gitea 是從 [Gogs](http://gogs.io) Fork 出來的，請閱讀部落格文章 [G
         - 刪除舊的儲存庫存檔
   - 環境變數
   - 命令列選項
-- 支援多國語言 ([21 種語言](https://github.com/go-gitea/gitea/tree/master/options/locale))
+- 支援多國語言 ([21 種語言](https://github.com/git3protocol/gitea/tree/master/options/locale))
 - 支援 [Mermaid](https://mermaidjs.github.io/) 圖表
 - 郵件服務
   - 通知
@@ -253,6 +253,7 @@ Gitea 是從 [Gogs](http://gogs.io) Fork 出來的，請閱讀部落格文章 [G
 - Raspberry Pi 3 的效能足夠讓 Gitea 承擔小型工作負載。
 - 雙核心 CPU 和 1GB 記憶體通常足以應付小型團隊/專案。
 - 在類 UNIX 系統上， 應該以專用的非 root 系統帳號來執行 Gitea。
+
   - 備註：Gitea 管理著 `~/.ssh/authorized_keys` 檔案。以一般身份使用者執行 Gitea 可能會破壞該使用者的登入能力。
 
 - [Git](https://git-scm.com/) 的最低需求為 2.0 或更新版本。

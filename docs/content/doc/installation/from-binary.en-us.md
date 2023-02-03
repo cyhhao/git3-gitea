@@ -32,7 +32,7 @@ You can find the file matching your platform from the [downloads page](https://d
 
 **For Windows**, you will likely want `windows-4.0-amd64`. It's for all modern versions of Windows, but there is also a `386` platform available designed for older, 32-bit versions of Windows.
 
-*Note: there is also a `gogit-windows` file available that was created to help with some [performance problems](https://github.com/go-gitea/gitea/pull/15482) reported by some Windows users on older systems/versions. You should consider using this file if you're experiencing performance issues, and let us know if it improves performance.*
+_Note: there is also a `gogit-windows` file available that was created to help with some [performance problems](https://github.com/git3protocol/gitea/pull/15482) reported by some Windows users on older systems/versions. You should consider using this file if you're experiencing performance issues, and let us know if it improves performance._
 
 **For macOS**, you should choose `darwin-arm64` if your hardware uses Apple Silicon, or `darwin-amd64` for Intel.
 
@@ -106,10 +106,10 @@ chmod 770 /etc/gitea
 
 If you don't want the web installer to be able to write to the config file, it is possible to make the config file read-only for the Gitea user (owner/group `root:git`, mode `0640`) however you will need to edit your config file manually to:
 
-* Set `INSTALL_LOCK= true`,
-* Ensure all database configuration details are set correctly
-* Ensure that the `SECRET_KEY` and `INTERNAL_TOKEN` values are set. (You may want to use the `gitea generate secret` to generate these secret keys.)
-* Ensure that any other secret keys you need are set.
+- Set `INSTALL_LOCK= true`,
+- Ensure all database configuration details are set correctly
+- Ensure that the `SECRET_KEY` and `INTERNAL_TOKEN` values are set. (You may want to use the `gitea generate secret` to generate these secret keys.)
+- Ensure that any other secret keys you need are set.
 
 See the [command line documentation]({{< relref "doc/usage/command-line.en-us.md" >}}) for information on using `gitea generate secret`.
 
@@ -193,6 +193,7 @@ It is recommended to switch to the arm6 version, which has been tested and shown
 <!---
 please remove after fixing the arm7 bug
 --->
+
 ### Git error after updating to a new version of Gitea
 
 If during the update, the binary file name has been changed to a new version of Gitea,

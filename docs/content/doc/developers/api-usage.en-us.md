@@ -23,7 +23,7 @@ menu:
 
 By default, `ENABLE_SWAGGER` is true, and
 `MAX_RESPONSE_ITEMS` is set to 50. See [Config Cheat
-Sheet](https://docs.gitea.io/en-us/config-cheat-sheet/) for more
+Sheet](https://docs.git3.sh/en-us/config-cheat-sheet/) for more
 information.
 
 ## Authentication
@@ -38,7 +38,7 @@ Gitea supports these methods of API authentication:
 All of these methods accept the same API key token type. You can
 better understand this by looking at the code -- as of this writing,
 Gitea parses queries and headers to find the token in
-[modules/auth/auth.go](https://github.com/go-gitea/gitea/blob/6efdcaed86565c91a3dc77631372a9cc45a58e89/modules/auth/auth.go#L47).
+[modules/auth/auth.go](https://github.com/git3protocol/gitea/blob/6efdcaed86565c91a3dc77631372a9cc45a58e89/modules/auth/auth.go#L47).
 
 ## Generating and listing API tokens
 
@@ -53,8 +53,8 @@ $ curl -H "Content-Type: application/json" -d '{"name":"test"}' -u username:pass
 {"id":1,"name":"test","sha1":"9fcb1158165773dd010fca5f0cf7174316c3e37d","token_last_eight":"16c3e37d"}
 ```
 
-The ``sha1`` (the token) is only returned once and is not stored in
-plain-text.  It will not be displayed when listing tokens with a `GET`
+The `sha1` (the token) is only returned once and is not stored in
+plain-text. It will not be displayed when listing tokens with a `GET`
 request; e.g.
 
 ```sh
@@ -78,7 +78,7 @@ interface: `Settings | Applications | Generate New Token`.
 
 ## OAuth2 Provider
 
-Access tokens obtained from Gitea's [OAuth2 provider](https://docs.gitea.io/en-us/oauth2-provider) are accepted by these methods:
+Access tokens obtained from Gitea's [OAuth2 provider](https://docs.git3.sh/en-us/oauth2-provider) are accepted by these methods:
 
 - `Authorization bearer ...` header in HTTP headers
 - `token=...` parameter in URL query string

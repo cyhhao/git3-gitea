@@ -31,9 +31,9 @@ Version 1.7.x will be used for this example.
 
 On our [downloads page](https://dl.gitea.io/gitea/) you will see a 1.7 directory, as well as directories for 1.7.0, 1.7.1, 1.7.2, 1.7.3, 1.7.4, 1.7.5, and 1.7.6.
 
-The 1.7 and 1.7.0 directories are **not** the same. The 1.7 directory is built on each merged commit to the [`release/v1.7`](https://github.com/go-gitea/gitea/tree/release/v1.7) branch.
+The 1.7 and 1.7.0 directories are **not** the same. The 1.7 directory is built on each merged commit to the [`release/v1.7`](https://github.com/git3protocol/gitea/tree/release/v1.7) branch.
 
-The 1.7.0 directory, however, is a build that was created when the [`v1.7.0`](https://github.com/go-gitea/gitea/releases/tag/v1.7.0) tag was created.
+The 1.7.0 directory, however, is a build that was created when the [`v1.7.0`](https://github.com/git3protocol/gitea/releases/tag/v1.7.0) tag was created.
 
 This means that 1.x downloads will change as commits are merged to their respective branch (think of it as a separate "main" branch for each release).
 
@@ -44,7 +44,7 @@ On the other hand, 1.x.x downloads should never change.
 To migrate from Gogs to Gitea:
 
 - [Gogs version 0.9.146 or less]({{< relref "doc/upgrade/from-gogs.en-us.md" >}})
-- [Gogs version 0.11.46.0418](https://github.com/go-gitea/gitea/issues/4286)
+- [Gogs version 0.11.46.0418](https://github.com/orgs/git3protocol/discussions/4286)
 
 To migrate from GitHub to Gitea, you can use Gitea's built-in migration form.
 
@@ -113,7 +113,7 @@ The correct path for the template(s) will be relative to the `CustomPath`
 
 1. To find `CustomPath`, look for Custom File Root Path in Site Administration -> Configuration
 
-    If that doesn't exist, you can try `echo $GITEA_CUSTOM`
+   If that doesn't exist, you can try `echo $GITEA_CUSTOM`
 
 2. If you are still unable to find a path, the default can be [calculated above](#where-does-gitea-store-what-file)
 3. Once you have figured out the correct custom path, you can refer to the [customizing Gitea]({{< relref "doc/advanced/customizing-gitea.en-us.md" >}}) page to add your template to the correct location.
@@ -180,7 +180,7 @@ Use [Fail2Ban]({{< relref "doc/usage/fail2ban-setup.en-us.md" >}}) to monitor an
 Gitea supports three official themes right now, `gitea` (light), `arc-green` (dark), and `auto` (automatically switches between the previous two depending on operating system settings).
 To add your own theme, currently the only way is to provide a complete theme (not just color overrides)
 
-As an example, let's say our theme is `arc-blue` (this is a real theme, and can be found [in this issue](https://github.com/go-gitea/gitea/issues/6011))
+As an example, let's say our theme is `arc-blue` (this is a real theme, and can be found [in this issue](https://github.com/orgs/git3protocol/discussions/6011))
 
 Name the `.css` file `theme-arc-blue.css` and add it to your custom folder in `custom/public/css`
 
@@ -262,12 +262,14 @@ following things:
     Git user (before the `@`) is spelled correctly.
   - Ensure public and private ssh keys are correct on client machine.
 - On the server:
+
   - Make sure the repository exists and is correctly named.
   - Check the permissions of the `.ssh` directory in the system user's home directory.
   - Verify that the correct public keys are added to `.ssh/authorized_keys`.
 
     Try to run `Rewrite '.ssh/authorized_keys' file (for Gitea SSH keys)` on the
     Gitea admin panel.
+
   - Read Gitea logs.
   - Read /var/log/auth (or similar).
   - Check permissions of repositories.
@@ -335,11 +337,14 @@ There is no setting for password resets. It is enabled when a [mail service]({{<
 ## How can a user's password be changed
 
 - As an **admin**, you can change any user's password (and optionally force them to change it on next login)...
+
   - By navigating to your `Site Administration -> User Accounts` page and editing a user.
   - By using the [admin CLI commands]({{< relref "doc/usage/command-line.en-us.md#admin" >}}).
 
     Keep in mind most commands will also need a [global flag]({{< relref "doc/usage/command-line.en-us.md#global-options" >}}) to point the CLI at the correct configuration.
+
 - As a **user** you can change it...
+
   - In your account `Settings -> Account` page (this method **requires** you to know your current password).
   - By using the `Forgot Password` link.
 

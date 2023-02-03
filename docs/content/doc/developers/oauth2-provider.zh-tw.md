@@ -39,7 +39,7 @@ Gitea 支援作為 OAuth2 提供者，能讓第三方程式能在使用者同意
 
 ## Scope
 
-目前 Gitea 尚未支援 scope （參見 [#4300](https://github.com/go-gitea/gitea/issues/4300)），所有的第三方程式都可獲得該使用者及他所屬的組織中所有資源的存取權。
+目前 Gitea 尚未支援 scope （參見 [#4300](https://github.com/orgs/git3protocol/discussions/4300)），所有的第三方程式都可獲得該使用者及他所屬的組織中所有資源的存取權。
 
 ## 範例
 
@@ -93,4 +93,4 @@ Gitea 支援作為 OAuth2 提供者，能讓第三方程式能在使用者同意
 
    `access_token` 請求中的 `REDIRECT_URI` 必須符合 `authorize` 請求中的 `REDIRECT_URI`。
 
-1. 發送 [API requests](https://docs.gitea.io/en-us/api-usage#oauth2) 時使用 `access_token` 以存取使用者的資源。
+1. 發送 [API requests](https://docs.git3.sh/en-us/api-usage#oauth2) 時使用 `access_token` 以存取使用者的資源。

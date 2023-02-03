@@ -53,7 +53,7 @@ Lists are specified as comma separated values. This format also works in subsect
 This section may be used for defining default values for subsections.
 Examples:
 
-- `LEVEL`: (Default: **Info**) Least severe log events to persist. Case insensitive. The full list of levels as of v1.17.3 can be read [here](https://github.com/go-gitea/gitea/blob/v1.17.3/custom/conf/app.example.ini#L507).
+- `LEVEL`: (Default: **Info**) Least severe log events to persist. Case insensitive. The full list of levels as of v1.17.3 can be read [here](https://github.com/git3protocol/gitea/blob/v1.17.3/custom/conf/app.example.ini#L507).
 - `STACKTRACE_LEVEL`: (Default: **None**) For this and more severe events the stacktrace will be printed upon getting logged.
 
 Some values are not inherited by subsections. For details see the "Non-inherited default values" section.
@@ -159,7 +159,7 @@ If unset, their own default will be used.
 If set it will be relative to the provided `ROOT_PATH` in the master `[log]` section.
 
 `MAX_SIZE_SHIFT` defines the maximum size of a file by left shifting 1 the given number of times (`1 << x`).
-The exact behavior at the time of v1.17.3 can be seen [here](https://github.com/go-gitea/gitea/blob/v1.17.3/modules/setting/log.go#L185).
+The exact behavior at the time of v1.17.3 can be seen [here](https://github.com/git3protocol/gitea/blob/v1.17.3/modules/setting/log.go#L185).
 
 The useful values of `COMPRESSION_LEVEL` are from 1 to (and including) 9, where higher numbers mean better compression.
 Beware that better compression might come with higher resource usage.

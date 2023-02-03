@@ -42,7 +42,7 @@ To use the Authorization Code Grant as a third party application it is required 
 
 ## Scopes
 
-Currently Gitea does not support scopes (see [#4300](https://github.com/go-gitea/gitea/issues/4300)) and all third party applications will be granted access to all resources of the user and their organizations.
+Currently Gitea does not support scopes (see [#4300](https://github.com/orgs/git3protocol/discussions/4300)) and all third party applications will be granted access to all resources of the user and their organizations.
 
 ## Client types
 
@@ -101,4 +101,4 @@ For public clients, a redirect URI of a loopback IP address such as `http://127.
 
    The `REDIRECT_URI` in the `access_token` request must match the `REDIRECT_URI` in the `authorize` request.
 
-3. Use the `access_token` to make [API requests](https://docs.gitea.io/en-us/api-usage#oauth2) to access the user's resources.
+3. Use the `access_token` to make [API requests](https://docs.git3.sh/en-us/api-usage#oauth2) to access the user's resources.

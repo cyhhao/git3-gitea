@@ -83,7 +83,7 @@ menu:
 ## 從更新版本的 Gogs 升級
 
 您也可以從更新版本的 Gogs 升級，但需要更多步驟。
-請參考 [#4286](https://github.com/go-gitea/gitea/issues/4286)。
+請參考 [#4286](https://github.com/orgs/git3protocol/discussions/4286)。
 
 ## 疑難排解
 
@@ -92,7 +92,7 @@ menu:
 
 ## 在 Unix 啟動時執行 Gitea
 
-從 [gitea/contrib](https://github.com/go-gitea/gitea/tree/master/contrib) 更新必要的檔案以取得正確的環境變數。
+從 [gitea/contrib](https://github.com/git3protocol/gitea/tree/master/contrib) 更新必要的檔案以取得正確的環境變數。
 
 使用 systemd 的發行版：
 

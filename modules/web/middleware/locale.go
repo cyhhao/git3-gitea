@@ -9,8 +9,6 @@ import (
 	"code.gitea.io/gitea/modules/setting"
 	"code.gitea.io/gitea/modules/translation"
 	"code.gitea.io/gitea/modules/translation/i18n"
-
-	"golang.org/x/text/language"
 )
 
 // Locale handle locale
@@ -36,9 +34,10 @@ func Locale(resp http.ResponseWriter, req *http.Request) translation.Locale {
 	// 3. Get language information from 'Accept-Language'.
 	// The first element in the list is chosen to be the default language automatically.
 	if len(lang) == 0 {
-		tags, _, _ := language.ParseAcceptLanguage(req.Header.Get("Accept-Language"))
-		tag := translation.Match(tags...)
-		lang = tag.String()
+		// tags, _, _ := language.ParseAcceptLanguage(req.Header.Get("Accept-Language"))
+		// tag := translation.Match(tags...)
+		// lang = tag.String()
+		lang = "en-US"
 	}
 
 	if changeLang {

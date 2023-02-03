@@ -32,7 +32,7 @@ func (s *ContentStore) Get(key BlobHash256Key) (storage.Object, error) {
 }
 
 // FIXME: Workaround to be removed in v1.20
-// https://github.com/go-gitea/gitea/issues/19586
+// https://github.com/orgs/git3protocol/discussions/19586
 func (s *ContentStore) Has(key BlobHash256Key) error {
 	_, err := s.store.Stat(KeyToRelativePath(key))
 	return err

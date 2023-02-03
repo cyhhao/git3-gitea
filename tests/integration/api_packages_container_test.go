@@ -595,7 +595,7 @@ func TestPackageContainer(t *testing.T) {
 		})
 	}
 
-	// https://github.com/go-gitea/gitea/issues/19586
+	// https://github.com/orgs/git3protocol/discussions/19586
 	t.Run("ParallelUpload", func(t *testing.T) {
 		defer tests.PrintCurrentTest(t)()
 

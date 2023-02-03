@@ -15,12 +15,12 @@ menu:
 
 # 配置说明
 
-这是针对Gitea配置文件的说明，你可以了解Gitea的强大配置。需要说明的是，你的所有改变请修改 `custom/conf/app.ini` 文件而不是源文件。
-所有默认值可以通过 [app.example.ini](https://github.com/go-gitea/gitea/blob/master/custom/conf/app.example.ini) 查看到。
+这是针对 Gitea 配置文件的说明，你可以了解 Gitea 的强大配置。需要说明的是，你的所有改变请修改 `custom/conf/app.ini` 文件而不是源文件。
+所有默认值可以通过 [app.example.ini](https://github.com/git3protocol/gitea/blob/master/custom/conf/app.example.ini) 查看到。
 如果你发现 `%(X)s` 这样的内容，请查看 [ini](https://github.com/go-ini/ini/#recursive-values) 这里的说明。
 标注了 :exclamation: 的配置项表明除非你真的理解这个配置项的意义，否则最好使用默认值。
 
-## ⚠️时效性警告⚠️
+## ⚠️ 时效性警告 ⚠️
 
 此文档的内容可能过于陈旧或者错误，请参考英文文档。
 
@@ -29,18 +29,18 @@ menu:
 ## Overall (`DEFAULT`)
 
 - `APP_NAME`: 应用名称，改成你希望的名字。
-- `RUN_USER`: 运行Gitea的用户，推荐使用 `git`；如果在你自己的个人电脑使用改成你自己的用户名。如果设置不正确，Gitea可能崩溃。
+- `RUN_USER`: 运行 Gitea 的用户，推荐使用 `git`；如果在你自己的个人电脑使用改成你自己的用户名。如果设置不正确，Gitea 可能崩溃。
 - `RUN_MODE`: 从性能考虑，如果在产品级的服务上改成 `prod`。如果您使用安装向导安装的那么会自动设置为 `prod`。
 
 ## Repository (`repository`)
 
-- `ROOT`: 存放git工程的根目录。这里必须填绝对路径，默认值是 `~/<username>/gitea-repositories`。
-- `SCRIPT_TYPE`: 服务器支持的Shell类型，通常是 `bash`，但有些服务器也有可能是 `sh`。
+- `ROOT`: 存放 git 工程的根目录。这里必须填绝对路径，默认值是 `~/<username>/gitea-repositories`。
+- `SCRIPT_TYPE`: 服务器支持的 Shell 类型，通常是 `bash`，但有些服务器也有可能是 `sh`。
 - `ANSI_CHARSET`: 默认字符编码。
-- `FORCE_PRIVATE`: 强制所有git工程必须私有。
-- `DEFAULT_PRIVATE`: 默认创建的git工程为私有。 可以是`last`, `private` 或 `public`。默认值是 `last`表示用户最后创建的Repo的选择。
-- `DEFAULT_PUSH_CREATE_PRIVATE`: **true**:  通过 ``push-to-create`` 方式创建的仓库是否默认为私有仓库.
-- `MAX_CREATION_LIMIT`: 全局最大每个用户创建的git工程数目， `-1` 表示没限制。
+- `FORCE_PRIVATE`: 强制所有 git 工程必须私有。
+- `DEFAULT_PRIVATE`: 默认创建的 git 工程为私有。 可以是`last`, `private` 或 `public`。默认值是 `last`表示用户最后创建的 Repo 的选择。
+- `DEFAULT_PUSH_CREATE_PRIVATE`: **true**: 通过 `push-to-create` 方式创建的仓库是否默认为私有仓库.
+- `MAX_CREATION_LIMIT`: 全局最大每个用户创建的 git 工程数目， `-1` 表示没限制。
 - `PULL_REQUEST_QUEUE_LENGTH`: 小心：合并请求测试队列的长度，尽量放大。
 
 ### Repository - Release (`repository.release`)
@@ -70,16 +70,16 @@ menu:
 
 - `PROTOCOL`: 可选 `http` 或 `https`。
 - `DOMAIN`: 服务器域名。
-- `ROOT_URL`: Gitea服务器的对外 URL。
+- `ROOT_URL`: Gitea 服务器的对外 URL。
 - `HTTP_ADDR`: HTTP 监听地址。
 - `HTTP_PORT`: HTTP 监听端口。
-- `DISABLE_SSH`: 是否禁用SSH。
-- `START_SSH_SERVER`: 是否启用内部SSH服务器。
-- `SSH_PORT`: SSH端口，默认为 `22`。
+- `DISABLE_SSH`: 是否禁用 SSH。
+- `START_SSH_SERVER`: 是否启用内部 SSH 服务器。
+- `SSH_PORT`: SSH 端口，默认为 `22`。
 - `OFFLINE_MODE`: 针对静态和头像文件禁用 CDN。
 - `DISABLE_ROUTER_LOG`: 关闭日志中的路由日志。
-- `CERT_FILE`: 启用HTTPS的证书文件。
-- `KEY_FILE`: 启用HTTPS的密钥文件。
+- `CERT_FILE`: 启用 HTTPS 的证书文件。
+- `KEY_FILE`: 启用 HTTPS 的密钥文件。
 - `STATIC_ROOT_PATH`: 存放模板和静态文件的根目录，默认是 Gitea 的根目录。
 - `STATIC_CACHE_TIME`: **6h**: 静态资源文件，包括 `custom/`, `public/` 和所有上传的头像的浏览器缓存时间。
 - `ENABLE_GZIP`: 启用实时生成的数据启用 GZIP 压缩，不包括静态资源。
@@ -96,28 +96,28 @@ menu:
 - `NAME`: 数据库名称。
 - `USER`: 数据库用户名。
 - `PASSWD`: 数据库用户密码。
-- `SSL_MODE`: MySQL 或 PostgreSQL数据库是否启用SSL模式。
+- `SSL_MODE`: MySQL 或 PostgreSQL 数据库是否启用 SSL 模式。
 - `CHARSET`: **utf8mb4**: 仅当数据库为 MySQL 时有效, 可以为 "utf8" 或 "utf8mb4"。注意：如果使用 "utf8mb4"，你的 MySQL InnoDB 版本必须在 5.6 以上。
 - `PATH`: SQLite3 数据文件存放路径。
-- `LOG_SQL`: **true**: 显示生成的SQL，默认为真。
+- `LOG_SQL`: **true**: 显示生成的 SQL，默认为真。
 - `MAX_IDLE_CONNS` **0**: 最大空闲数据库连接
 - `CONN_MAX_LIFETIME` **3s**: 数据库连接最大存活时间
 
 ## Indexer (`indexer`)
 
 - `ISSUE_INDEXER_TYPE`: **bleve**: 工单索引类型，当前支持 `bleve`, `db` 和 `elasticsearch`，当为 `db` 时其它工单索引项可不用设置。
-- `ISSUE_INDEXER_CONN_STR`: ****: 工单索引连接字符串，仅当 ISSUE_INDEXER_TYPE 为 `elasticsearch` 时有效。例如: http://elastic:changeme@localhost:9200
+- `ISSUE_INDEXER_CONN_STR`: \*\*\*\*: 工单索引连接字符串，仅当 ISSUE_INDEXER_TYPE 为 `elasticsearch` 时有效。例如: http://elastic:changeme@localhost:9200
 - `ISSUE_INDEXER_NAME`: **gitea_issues**: 工单索引名称，仅当 ISSUE_INDEXER_TYPE 为 `elasticsearch` 时有效。
 - `ISSUE_INDEXER_PATH`: **indexers/issues.bleve**: 工单索引文件存放路径，当索引类型为 `bleve` 时有效。
 - `ISSUE_INDEXER_QUEUE_TYPE`: **levelqueue**: 工单索引队列类型，当前支持 `channel`， `levelqueue` 或 `redis`。
 - `ISSUE_INDEXER_QUEUE_DIR`: **indexers/issues.queue**: 当 `ISSUE_INDEXER_QUEUE_TYPE` 为 `levelqueue` 时，保存索引队列的磁盘路径。
-- `ISSUE_INDEXER_QUEUE_CONN_STR`: **addrs=127.0.0.1:6379 db=0**: 当 `ISSUE_INDEXER_QUEUE_TYPE` 为 `redis` 时，保存Redis队列的连接字符串。
+- `ISSUE_INDEXER_QUEUE_CONN_STR`: **addrs=127.0.0.1:6379 db=0**: 当 `ISSUE_INDEXER_QUEUE_TYPE` 为 `redis` 时，保存 Redis 队列的连接字符串。
 - `ISSUE_INDEXER_QUEUE_BATCH_NUMBER`: **20**: 队列处理中批量提交数量。
 
-- `REPO_INDEXER_ENABLED`: **false**: 是否启用代码搜索（启用后会占用比较大的磁盘空间，如果是bleve可能需要占用约6倍存储空间）。
+- `REPO_INDEXER_ENABLED`: **false**: 是否启用代码搜索（启用后会占用比较大的磁盘空间，如果是 bleve 可能需要占用约 6 倍存储空间）。
 - `REPO_INDEXER_TYPE`: **bleve**: 代码搜索引擎类型，可以为 `bleve` 或者 `elasticsearch`。
 - `REPO_INDEXER_PATH`: **indexers/repos.bleve**: 用于代码搜索的索引文件路径。
-- `REPO_INDEXER_CONN_STR`: ****: 代码搜索引擎连接字符串，当 `REPO_INDEXER_TYPE` 为 `elasticsearch` 时有效。例如： http://elastic:changeme@localhost:9200
+- `REPO_INDEXER_CONN_STR`: \*\*\*\*: 代码搜索引擎连接字符串，当 `REPO_INDEXER_TYPE` 为 `elasticsearch` 时有效。例如： http://elastic:changeme@localhost:9200
 - `REPO_INDEXER_NAME`: **gitea_codes**: 代码搜索引擎的名字，当 `REPO_INDEXER_TYPE` 为 `elasticsearch` 时有效。
 
 - `UPDATE_BUFFER_LEN`: **20**: 代码索引请求的缓冲区长度。
@@ -156,11 +156,11 @@ menu:
 ## Webhook (`webhook`)
 
 - `QUEUE_LENGTH`: 说明: Hook 任务队列长度。
-- `DELIVER_TIMEOUT`: 请求webhooks的超时时间，单位秒。
+- `DELIVER_TIMEOUT`: 请求 webhooks 的超时时间，单位秒。
 - `SKIP_TLS_VERIFY`: 是否允许不安全的证书。
-- `PAGING_NUM`: 每页显示的Webhook 历史数量。
-- `PROXY_URL`: ****: 代理服务器网址，支持 http://, https//, socks://, 为空将使用环境变量中的 http_proxy/https_proxy 设置。
-- `PROXY_HOSTS`: ****: 逗号分隔的需要代理的域名或IP地址。支持 * 号匹配符，使用 ** 匹配所有域名和IP地址。
+- `PAGING_NUM`: 每页显示的 Webhook 历史数量。
+- `PROXY_URL`: \*\*\*\*: 代理服务器网址，支持 http://, https//, socks://, 为空将使用环境变量中的 http_proxy/https_proxy 设置。
+- `PROXY_HOSTS`: \***_: 逗号分隔的需要代理的域名或 IP 地址。支持 _ 号匹配符，使用 ** 匹配所有域名和 IP 地址。
 
 ## Mailer (`mailer`)
 
@@ -179,8 +179,8 @@ menu:
 
 - `ENABLED`: **true**: 是否启用。
 - `ADAPTER`: **memory**: 缓存引擎，可以为 `memory`, `redis` 或 `memcache`。
-- `INTERVAL`: **60**: 只对内存缓存有效，GC间隔，单位秒。
-- `HOST`: **\<empty\>**: 针对redis和memcache有效，主机地址和端口。
+- `INTERVAL`: **60**: 只对内存缓存有效，GC 间隔，单位秒。
+- `HOST`: **\<empty\>**: 针对 redis 和 memcache 有效，主机地址和端口。
   - Redis: `network=tcp,addr=127.0.0.1:6379,password=macaron,db=0,pool_size=100,idle_timeout=180`
   - Memache: `127.0.0.1:9090;127.0.0.1:9091`
 - `ITEM_TTL`: **16h**: 缓存项目失效时间，设置为 -1 则禁用缓存。
@@ -195,8 +195,8 @@ menu:
 
 - `PROVIDER`: Session 内容存储方式，可选 `memory`, `file`, `redis` 或 `mysql`。
 - `PROVIDER_CONFIG`: 如果是文件，那么这里填根目录；其他的要填主机地址和端口。
-- `COOKIE_SECURE`: 强制使用 HTTPS 作为session访问。
-- `GC_INTERVAL_TIME`: Session失效时间。
+- `COOKIE_SECURE`: 强制使用 HTTPS 作为 session 访问。
+- `GC_INTERVAL_TIME`: Session 失效时间。
 
 ## Picture (`picture`)
 
@@ -204,13 +204,13 @@ menu:
 - `DISABLE_GRAVATAR`: 开启则只使用内部头像。
 - `ENABLE_FEDERATED_AVATAR`: 启用头像联盟支持 (参见 http://www.libravatar.org)
 
-- `AVATAR_STORAGE_TYPE`: **local**: 头像存储类型，可以为 `local` 或 `minio`，分别支持本地文件系统和 minio 兼容的API。
+- `AVATAR_STORAGE_TYPE`: **local**: 头像存储类型，可以为 `local` 或 `minio`，分别支持本地文件系统和 minio 兼容的 API。
 - `AVATAR_UPLOAD_PATH`: **data/avatars**: 存储头像的文件系统路径。
 - `AVATAR_MAX_WIDTH`: **4096**: 头像最大宽度，单位像素。
 - `AVATAR_MAX_HEIGHT`: **3072**: 头像最大高度，单位像素。
 - `AVATAR_MAX_FILE_SIZE`: **1048576** (1Mb): 头像最大大小。
 
-- `REPOSITORY_AVATAR_STORAGE_TYPE`: **local**: 仓库头像存储类型，可以为 `local` 或 `minio`，分别支持本地文件系统和 minio 兼容的API。
+- `REPOSITORY_AVATAR_STORAGE_TYPE`: **local**: 仓库头像存储类型，可以为 `local` 或 `minio`，分别支持本地文件系统和 minio 兼容的 API。
 - `REPOSITORY_AVATAR_UPLOAD_PATH`: **data/repo-avatars**: 存储仓库头像的路径。
 - `REPOSITORY_AVATAR_FALLBACK`: **none**: 当头像丢失时的处理方式
   - none = 不显示头像
@@ -234,7 +234,7 @@ menu:
 - `MINIO_BASE_PATH`: **attachments/**: Minio base path on the bucket，仅当 `STORAGE_TYPE` 是 `minio` 时有效。
 - `MINIO_USE_SSL`: **false**: Minio enabled ssl，仅当 `STORAGE_TYPE` 是 `minio` 时有效。
 
-关于 `ALLOWED_TYPES`， 在 (*)unix 系统中可以使用`file -I <filename>` 来快速获得对应的 `MIME type`。
+关于 `ALLOWED_TYPES`， 在 (\*)unix 系统中可以使用`file -I <filename>` 来快速获得对应的 `MIME type`。
 
 ```shell
 $ file -I test00.tar.xz
@@ -260,22 +260,22 @@ test01.xls: application/vnd.ms-excel; charset=binary
 - `SCHEDULE` 所接受的格式
   - 完整 crontab 控制, 例如 `* * * * * ?`
   - 描述符, 例如 `@midnight`, `@every 1h30m` ...
-  - 更多细节参见 [cron api文档](https://pkg.go.dev/github.com/gogs/cron@v0.0.0-20171120032916-9f6c956d3e14)
+  - 更多细节参见 [cron api 文档](https://pkg.go.dev/github.com/gogs/cron@v0.0.0-20171120032916-9f6c956d3e14)
 
 ### Cron - Update Mirrors (`cron.update_mirrors`)
 
-- `SCHEDULE`: 自动同步镜像仓库的Cron语法，比如：`@every 1h`。
+- `SCHEDULE`: 自动同步镜像仓库的 Cron 语法，比如：`@every 1h`。
 
 ### Cron - Repository Health Check (`cron.repo_health_check`)
 
-- `SCHEDULE`: 仓库健康监测的Cron语法，比如：`@midnight`。
+- `SCHEDULE`: 仓库健康监测的 Cron 语法，比如：`@midnight`。
 - `TIMEOUT`: 仓库健康监测的超时时间，比如：`60s`.
 - `ARGS`: 执行 `git fsck` 命令的参数，比如：`--unreachable --tags`。
 
 ### Cron - Repository Statistics Check (`cron.check_repo_stats`)
 
 - `RUN_AT_START`: 是否启动时自动运行仓库统计。
-- `SCHEDULE`: 仓库统计时的Cron 语法，比如：`@midnight`.
+- `SCHEDULE`: 仓库统计时的 Cron 语法，比如：`@midnight`.
 
 ### Cron - Update Migration Poster ID (`cron.update_migration_poster_id`)
 
@@ -290,25 +290,25 @@ test01.xls: application/vnd.ms-excel; charset=binary
 
 ## Git - 超时设置 (`git.timeout`)
 
-- `DEFAUlT`: **360**: Git操作默认超时时间，单位秒
+- `DEFAUlT`: **360**: Git 操作默认超时时间，单位秒
 - `MIGRATE`: **600**: 迁移外部仓库时的超时时间，单位秒
 - `MIRROR`: **300**: 镜像外部仓库的超时时间，单位秒
 - `CLONE`: **300**: 内部仓库间克隆的超时时间，单位秒
 - `PULL`: **300**: 内部仓库间拉取的超时时间，单位秒
-- `GC`: **60**: git仓库GC的超时时间，单位秒
-- `ENABLE_AUTO_GIT_WIRE_PROTOCOL`: **true**: 是否根据 Git Wire Protocol协议支持情况自动切换版本，当 git 版本在 2.18 及以上时会自动切换到版本2。为 `false` 则不切换。
+- `GC`: **60**: git 仓库 GC 的超时时间，单位秒
+- `ENABLE_AUTO_GIT_WIRE_PROTOCOL`: **true**: 是否根据 Git Wire Protocol 协议支持情况自动切换版本，当 git 版本在 2.18 及以上时会自动切换到版本 2。为 `false` 则不切换。
 
 ## API (`api`)
 
-- `ENABLE_SWAGGER`: **true**: 是否启用swagger路由 /api/swagger, /api/v1/swagger etc. endpoints. True 或 false.
+- `ENABLE_SWAGGER`: **true**: 是否启用 swagger 路由 /api/swagger, /api/v1/swagger etc. endpoints. True 或 false.
 - `MAX_RESPONSE_ITEMS`: **50**: 一个页面最大的项目数。
-- `DEFAULT_PAGING_NUM`: **30**: API中默认分页条数。
-- `DEFAULT_GIT_TREES_PER_PAGE`: **1000**: GIT TREES API每页的默认最大项数.
-- `DEFAULT_MAX_BLOB_SIZE`: **10485760**: BLOBS API默认最大大小.
+- `DEFAULT_PAGING_NUM`: **30**: API 中默认分页条数。
+- `DEFAULT_GIT_TREES_PER_PAGE`: **1000**: GIT TREES API 每页的默认最大项数.
+- `DEFAULT_MAX_BLOB_SIZE`: **10485760**: BLOBS API 默认最大大小.
 
 ## Markup (`markup`)
 
-外部渲染工具支持，你可以用你熟悉的文档渲染工具. 比如一下将新增一个名字为 `asciidoc` 的渲染工具which is followed `markup.` ini section. And there are some config items below.
+外部渲染工具支持，你可以用你熟悉的文档渲染工具. 比如一下将新增一个名字为 `asciidoc` 的渲染工具 which is followed `markup.` ini section. And there are some config items below.
 
 ```ini
 [markup.asciidoc]
@@ -319,8 +319,8 @@ RENDER_COMMAND = "asciidoc --out-file=- -"
 IS_INPUT_FILE = false
 ```
 
-- ENABLED: 是否启用，默认为false。
-- NEED\_POSTPROCESS: **true** 设置为 true 则会替换渲染文件中的内部链接和Commit ID 等。
+- ENABLED: 是否启用，默认为 false。
+- NEED_POSTPROCESS: **true** 设置为 true 则会替换渲染文件中的内部链接和 Commit ID 等。
 - FILE_EXTENSIONS: 关联的文档的扩展名，多个扩展名用都好分隔。
 - RENDER_COMMAND: 工具的命令行命令及参数。
 - IS_INPUT_FILE: 输入方式是最后一个参数为文件路径还是从标准输入读取。
@@ -331,8 +331,8 @@ IS_INPUT_FILE = false
 
 以下两个环境变量将会被传递给渲染命令：
 
-- `GITEA_PREFIX_SRC`：包含当前的`src`路径的URL前缀，可以被用于链接的前缀。
-- `GITEA_PREFIX_RAW`：包含当前的`raw`路径的URL前缀，可以被用于图片的前缀。
+- `GITEA_PREFIX_SRC`：包含当前的`src`路径的 URL 前缀，可以被用于链接的前缀。
+- `GITEA_PREFIX_RAW`：包含当前的`raw`路径的 URL 前缀，可以被用于图片的前缀。
 
 如果 `RENDER_CONTENT_MODE` 为 `sanitized`，则 Gitea 支持自定义渲染 HTML 的净化策略。以下例子将用 pandoc 支持 KaTeX 输出。
 
@@ -351,7 +351,7 @@ ALLOW_DATA_URI_IMAGES = true
 - `REGEXP`: 正则表达式，用来匹配属性的内容。如果为空，则跟属性内容无关。
 - `ALLOW_DATA_URI_IMAGES`: **false** 允许 data uri 图片 (`<img src="data:image/png;base64,..."/>`)。
 
-多个净化规则可以被同时定义，只要section名称最后一位不重复即可。如： `[markup.sanitizer.TeX-2]`。
+多个净化规则可以被同时定义，只要 section 名称最后一位不重复即可。如： `[markup.sanitizer.TeX-2]`。
 为了针对一种渲染类型进行一个特殊的净化策略，必须使用形如 `[markup.sanitizer.asciidoc.rule-1]` 的方式来命名 section。
 如果此规则没有匹配到任何渲染类型，它将会被应用到所有的渲染类型。
 
@@ -364,7 +364,7 @@ ALLOW_DATA_URI_IMAGES = true
 
 - `QUEUE_TYPE`: **channel**: 任务队列类型，可以为 `channel` 或 `redis`。
 - `QUEUE_LENGTH`: **1000**: 任务队列长度，当 `QUEUE_TYPE` 为 `channel` 时有效。
-- `QUEUE_CONN_STR`: **addrs=127.0.0.1:6379 db=0**: 任务队列连接字符串，当 `QUEUE_TYPE` 为 `redis` 时有效。如果redis有密码，则可以 `addrs=127.0.0.1:6379 password=123 db=0`。
+- `QUEUE_CONN_STR`: **addrs=127.0.0.1:6379 db=0**: 任务队列连接字符串，当 `QUEUE_TYPE` 为 `redis` 时有效。如果 redis 有密码，则可以 `addrs=127.0.0.1:6379 password=123 db=0`。
 
 ## Migrations (`migrations`)
 
@@ -443,7 +443,7 @@ Repository archive 的存储配置。 如果 `STORAGE_TYPE` 为空，则此配�
 
 - `PROXY_ENABLED`: **false**: 是否启用全局代理。如果为否，则不使用代理，环境变量中的代理也不使用
 - `PROXY_URL`: **\<empty\>**: 代理服务器地址，支持 http://, https//, socks://，为空则不启用代理而使用环境变量中的 http_proxy/https_proxy
-- `PROXY_HOSTS`: **\<empty\>**: 逗号分隔的多个需要代理的网址，支持 * 号匹配符号， ** 表示匹配所有网站
+- `PROXY_HOSTS`: **\<empty\>**: 逗号分隔的多个需要代理的网址，支持 \* 号匹配符号， \*\* 表示匹配所有网站
 
 i.e.
 
@@ -455,5 +455,5 @@ PROXY_HOSTS = *.github.com
 
 ## Other (`other`)
 
-- `SHOW_FOOTER_BRANDING`: 为真则在页面底部显示Gitea的字样。
-- `SHOW_FOOTER_VERSION`: 为真则在页面底部显示Gitea的版本。
+- `SHOW_FOOTER_BRANDING`: 为真则在页面底部显示 Gitea 的字样。
+- `SHOW_FOOTER_VERSION`: 为真则在页面底部显示 Gitea 的版本。

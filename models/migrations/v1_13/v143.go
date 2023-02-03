@@ -10,7 +10,7 @@ import (
 )
 
 func RecalculateStars(x *xorm.Engine) (err error) {
-	// because of issue https://github.com/go-gitea/gitea/issues/11949,
+	// because of issue https://github.com/orgs/git3protocol/discussions/11949,
 	// recalculate Stars number for all users to fully fix it.
 
 	type User struct {

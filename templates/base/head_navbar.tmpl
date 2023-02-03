@@ -179,7 +179,7 @@
 						{{svg "octicon-tools"}}
 						{{.locale.Tr "your_settings"}}<!-- Your settings -->
 					</a>
-					<a class="item" target="_blank" rel="noopener noreferrer" href="https://docs.gitea.io">
+					<a class="item" target="_blank" rel="noopener noreferrer" href="https://docs.git3.sh">
 						{{svg "octicon-question"}}
 						{{.locale.Tr "help"}}<!-- Help -->
 					</a>
@@ -201,7 +201,7 @@
 			</div><!-- end dropdown avatar menu -->
 		</div><!-- end signed user right menu -->
 	{{else}}
-		<a class="item" target="_blank" rel="noopener noreferrer" href="https://docs.gitea.io">{{.locale.Tr "help"}}</a>
+		<a class="item" target="_blank" rel="noopener noreferrer" href="https://docs.git3.sh">{{.locale.Tr "help"}}</a>
 		<div class="right stackable menu">
 			{{if .ShowRegistrationButton}}
 				<a class="item{{if .PageIsSignUp}} active{{end}}" href="{{AppSubUrl}}/user/sign_up">

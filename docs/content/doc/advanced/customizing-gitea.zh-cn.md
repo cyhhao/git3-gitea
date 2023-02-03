@@ -17,17 +17,17 @@ menu:
 
 Gitea 引用 `custom` 目录中的自定义配置文件来覆盖配置、模板等默认配置。
 
-如果从二进制部署 Gitea ，则所有默认路径都将相对于该 gitea 二进制文件；如果从发行版安装，则可能会将这些路径修改为Linux文件系统标准。Gitea
+如果从二进制部署 Gitea ，则所有默认路径都将相对于该 gitea 二进制文件；如果从发行版安装，则可能会将这些路径修改为 Linux 文件系统标准。Gitea
 将会自动创建包括 `custom/` 在内的必要应用目录，应用本身的配置存放在
 `custom/conf/app.ini` 当中。在发行版中可能会以 `/etc/gitea/` 的形式为 `custom` 设置一个符号链接，查看配置详情请移步：
 
-- [快速备忘单](https://docs.gitea.io/en-us/config-cheat-sheet/)
-- [完整配置清单](https://github.com/go-gitea/gitea/blob/master/custom/conf/app.example.ini)
+- [快速备忘单](https://docs.git3.sh/en-us/config-cheat-sheet/)
+- [完整配置清单](https://github.com/git3protocol/gitea/blob/master/custom/conf/app.example.ini)
 
 如果您在 binary 同目录下无法找到 `custom` 文件夹，请检查您的 `GITEA_CUSTOM`
 环境变量配置， 因为它可能被配置到了其他地方（可能被一些启动脚本设置指定了目录）。
 
-- [环境变量清单](https://docs.gitea.io/en-us/specific-variables/)
+- [环境变量清单](https://docs.git3.sh/en-us/specific-variables/)
 
 **注：** 必须完全重启 Gitea 以使配置生效。
 
@@ -65,13 +65,13 @@ Gitea 引用 `custom` 目录中的自定义配置文件来覆盖配置、模板�
 
 同理，您可以将页签添加到 `extra_tabs.tmpl` 中，使用同样的方式来添加页签。它的具体样式需要与
 `templates/repo/header.tmpl` 中已有的其他选项卡的样式匹配
-([source in GitHub](https://github.com/go-gitea/gitea/blob/master/templates/repo/header.tmpl))
+([source in GitHub](https://github.com/git3protocol/gitea/blob/master/templates/repo/header.tmpl))
 
 ### 页面的其他新增内容
 
 除了 `extra_links.tmpl` 和 `extra_tabs.tmpl`，您可以在您的 `custom/templates/custom/` 目录中存放一些其他有用的模板，例如：
 
-- `header.tmpl`，在 `<head>` 标记结束之前的模板，例如添加自定义CSS文件
+- `header.tmpl`，在 `<head>` 标记结束之前的模板，例如添加自定义 CSS 文件
 - `body_outer_pre.tmpl`，在 `<body>` 标记开始处的模板
 - `body_inner_pre.tmpl`，在顶部导航栏之前，但在主 container 内部的模板，例如添加一个 `<div class="full height">`
 - `body_inner_post.tmpl`，在主 container 结束处的模板
@@ -85,4 +85,4 @@ Gitea 引用 `custom` 目录中的自定义配置文件来覆盖配置、模板�
 ## 更改 Gitea 外观
 
 Gitea 目前由两种内置主题，分别为默认 `gitea` 主题和深色主题 `arc-green`，您可以通过修改
-`app.ini` [ui](https://docs.gitea.io/en-us/config-cheat-sheet/#ui-ui) 部分的 `DEFAULT_THEME` 的值来变更至一个可用的 Gitea 外观。
+`app.ini` [ui](https://docs.git3.sh/en-us/config-cheat-sheet/#ui-ui) 部分的 `DEFAULT_THEME` 的值来变更至一个可用的 Gitea 外观。

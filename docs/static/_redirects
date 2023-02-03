@@ -1,4 +1,4 @@
-https://gitea-docs.netlify.com/* https://docs.gitea.io/:splat 302!
+https://gitea-docs.netlify.com/* https://docs.git3.sh/:splat 302!
 
 / /fr-fr/ 302! Language=fr
 / /nl-nl/ 302! Language=nl

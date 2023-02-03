@@ -51,7 +51,7 @@ function updateEditor(monaco, editor, filename, lineWrapExts) {
   if (language !== newLanguage) monaco.editor.setModelLanguage(model, newLanguage);
 }
 
-// export editor for customization - https://github.com/go-gitea/gitea/issues/10409
+// export editor for customization - https://github.com/orgs/git3protocol/discussions/10409
 function exportEditor(editor) {
   if (!window.codeEditors) window.codeEditors = [];
   if (!window.codeEditors.includes(editor)) window.codeEditors.push(editor);

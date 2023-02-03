@@ -194,8 +194,8 @@ func main() {
 	}
 	remoteUpstream := "origin" // Default
 	for _, r := range remotes {
-		if r.Config().URLs[0] == "https://github.com/go-gitea/gitea.git" ||
-			r.Config().URLs[0] == "https://github.com/go-gitea/gitea" ||
+		if r.Config().URLs[0] == "https://github.com/git3protocol/gitea.git" ||
+			r.Config().URLs[0] == "https://github.com/git3protocol/gitea" ||
 			r.Config().URLs[0] == "git@github.com:go-gitea/gitea.git" { // fetch at index 0
 			remoteUpstream = r.Config().Name
 			break

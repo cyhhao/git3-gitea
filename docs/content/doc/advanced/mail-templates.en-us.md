@@ -20,7 +20,7 @@ menu:
 {{< toc >}}
 
 To craft the e-mail subject and contents for certain operations, Gitea can be customized by using templates. The templates
-for these functions are located under the [`custom` directory](https://docs.gitea.io/en-us/customizing-gitea/).
+for these functions are located under the [`custom` directory](https://docs.git3.sh/en-us/customizing-gitea/).
 Gitea has an internal template that serves as default in case there's no custom alternative.
 
 Custom templates are loaded when Gitea starts. Changes made to them are not recognized until Gitea is restarted again.
@@ -167,7 +167,7 @@ If the template fails to render, it will be noticed only at the moment the mail 
 A default subject is used if the subject template fails, and whatever was rendered successfully
 from the the _mail body_ is used, disregarding the rest.
 
-Please check [Gitea's logs](https://docs.gitea.io/en-us/logging-configuration/) for error messages in case of trouble.
+Please check [Gitea's logs](https://docs.git3.sh/en-us/logging-configuration/) for error messages in case of trouble.
 
 ## Example
 
@@ -249,10 +249,10 @@ This template produces something along these lines:
 >
 > #### Message content:
 >
-> \_********************************\_********************************
+> \_**************\*\*\*\***************\_**************\*\*\*\***************
 >
 > Mike, I think we should tone down the blues a little.
-> \_********************************\_********************************
+> \_**************\*\*\*\***************\_**************\*\*\*\***************
 >
 > [View it on Gitea](#).
 
@@ -273,8 +273,9 @@ the messages. Here's a list of some of them:
 These are _functions_, not metadata, so they have to be used:
 
 ```html
-Like this:         {{Str2html "Escape<my>text"}}
-Or this:           {{"Escape<my>text" | Str2html}}
-Or this:           {{AppUrl}}
-But not like this: {{.AppUrl}}
+Like this: {{Str2html "Escape<my
+  >text"}} Or this: {{"Escape<my
+    >text" | Str2html}} Or this: {{AppUrl}} But not like this: {{.AppUrl}}</my
+  ></my
+>
 ```

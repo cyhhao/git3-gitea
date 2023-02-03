@@ -75,7 +75,7 @@ async function main() {
     generate(faviconSvg, '../public/img/favicon.png', {size: 180}),
     generate(logoSvg, '../public/img/avatar_default.png', {size: 200}),
     generate(logoSvg, '../public/img/apple-touch-icon.png', {size: 180, bg: true}),
-    gitea && generate(logoSvg, '../public/img/gitea.svg', {size: 32}),
+    gitea && generate(logoSvg, '../public/img/git3.svg', {size: 32}),
   ]);
 }
 

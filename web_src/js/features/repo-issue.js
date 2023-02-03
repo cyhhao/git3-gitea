@@ -495,7 +495,7 @@ export function initRepoPullRequestReview() {
   });
 
   $(document).on('click', 'a.add-code-comment', async function (e) {
-    if ($(e.target).hasClass('btn-add-single')) return; // https://github.com/go-gitea/gitea/issues/4745
+    if ($(e.target).hasClass('btn-add-single')) return; // https://github.com/orgs/git3protocol/discussions/4745
     e.preventDefault();
 
     const isSplit = $(this).closest('.code-diff').hasClass('code-diff-split');

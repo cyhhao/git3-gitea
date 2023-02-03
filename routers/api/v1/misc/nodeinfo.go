@@ -67,7 +67,7 @@ func NodeInfo(ctx *context.APIContext) {
 		Software: structs.NodeInfoSoftware{
 			Name:       "gitea",
 			Version:    setting.AppVer,
-			Repository: "https://github.com/go-gitea/gitea.git",
+			Repository: "https://github.com/git3protocol/gitea.git",
 			Homepage:   "https://gitea.io/",
 		},
 		Protocols: []string{"activitypub"},

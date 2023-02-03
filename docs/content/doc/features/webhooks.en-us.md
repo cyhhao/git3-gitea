@@ -32,7 +32,7 @@ All event pushes are POST requests. The methods currently supported are:
 
 ### Event information
 
-**WARNING**: The `secret` field in the payload is deprecated as of Gitea 1.13.0 and will be removed in 1.14.0: https://github.com/go-gitea/gitea/issues/11755
+**WARNING**: The `secret` field in the payload is deprecated as of Gitea 1.13.0 and will be removed in 1.14.0: https://github.com/orgs/git3protocol/discussions/11755
 
 The following is an example of event information that will be sent by Gitea to
 a Payload URL:
