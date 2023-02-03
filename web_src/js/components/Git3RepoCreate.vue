@@ -79,7 +79,7 @@ const onboard = Onboard({
   ],
   appMetadata: {
     name: "Git3",
-    icon: "/assets/img/logo.svg",
+    icon: "/assets/img/logo.png",
     description: "Git3: Git protocol for web3"
   },
   accountCenter: {
