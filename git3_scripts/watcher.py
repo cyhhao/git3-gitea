@@ -53,7 +53,7 @@ def main():
                             "auth_password": "",
                             "auth_token": "",
                             "auth_username": "",
-                            "clone_addr": f"git3://{repoName}",
+                            "clone_addr": f"git3://git3.w3q/{repoName}",
                             "description": "",
                             "issues": True,
                             "labels": True,
