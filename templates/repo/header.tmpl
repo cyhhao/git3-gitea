@@ -66,7 +66,7 @@
 							</div>
 						</form>
 					{{end}}
-					<form method="post" action="{{$.RepoLink}}/action/{{if $.IsWatchingRepo}}un{{end}}watch?redirect_to={{$.Link}}">
+					<!-- <form method="post" action="{{$.RepoLink}}/action/{{if $.IsWatchingRepo}}un{{end}}watch?redirect_to={{$.Link}}">
 						{{$.CsrfTokenHtml}}
 						<div class="ui labeled button{{if not $.IsSigned}} tooltip{{end}}" tabindex="0"{{if not $.IsSigned}} data-content="{{$.locale.Tr "repo.watch_guest_user"}}" data-position="top center"{{end}}>
 							<button type="submit" class="ui compact small basic button"{{if not $.IsSigned}} disabled{{end}}>
@@ -144,7 +144,7 @@
 								{{CountFmt .NumForks}}
 							</a>
 						</div>
-					{{end}}
+					{{end}} -->
 				</div>
 			{{end}}
 		</div><!-- end grid -->
@@ -159,7 +159,7 @@
 				</a>
 				{{end}}
 
-				{{if .Permission.CanRead $.UnitTypeIssues}}
+				<!-- {{if .Permission.CanRead $.UnitTypeIssues}}
 					<a class="{{if .PageIsIssueList}}active {{end}}item" href="{{.RepoLink}}/issues">
 						{{svg "octicon-issue-opened"}} {{.locale.Tr "repo.issues"}}
 						{{if .Repository.NumOpenIssues}}
@@ -211,7 +211,7 @@
 					<a class="{{if .PageIsWiki}}active {{end}}item" href="{{.RepoLink}}/wiki" {{if and (.Permission.CanRead $.UnitTypeExternalWiki) (not (HasPrefix ((.Repository.MustGetUnit $.Context $.UnitTypeExternalWiki).ExternalWikiConfig.ExternalWikiURL) (.Repository.HTMLURL)))}} target="_blank" rel="noopener noreferrer" {{end}}>
 						{{svg "octicon-book"}} {{.locale.Tr "repo.wiki"}}
 					</a>
-				{{end}}
+				{{end}} -->
 
 				{{if and (.Permission.CanReadAny $.UnitTypePullRequests $.UnitTypeIssues $.UnitTypeReleases) (not .IsEmptyRepo)}}
 					<a class="{{if .PageIsActivity}}active {{end}}item" href="{{.RepoLink}}/activity">
