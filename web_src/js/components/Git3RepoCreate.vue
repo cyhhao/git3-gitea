@@ -34,7 +34,7 @@
           <div class="inline field">
             <label></label>
             <button class="ui green button " :class="{ 'disabled': !isActive && isConnected }" @click="clickSubmit">
-              {{ isConnected?(mode == "Create" ? "Create" : "Transfer Owner") : "Connect Wallet" }}
+              {{ isConnected ? (mode == "Create" ? "Create" : "Transfer Owner") : "Connect Wallet" }}
             </button>
           </div>
 
@@ -47,7 +47,6 @@
       </form>
     </div>
   </div>
-
 </template>
 
 <script>
