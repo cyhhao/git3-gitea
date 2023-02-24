@@ -50,7 +50,7 @@
 				</div>
 
 				<div class="field">
-					<button class="ui green button">{{$.locale.Tr "repo.settings.update_settings"}}</button>
+					<button class="button-default button--primary">{{$.locale.Tr "repo.settings.update_settings"}}</button>
 				</div>
 			</form>
 
@@ -64,7 +64,7 @@
 				</div>
 
 				<div class="field">
-					<button class="ui green button">{{$.locale.Tr "settings.update_avatar"}}</button>
+					<button class="button-default button--primary">{{$.locale.Tr "settings.update_avatar"}}</button>
 					<a class="ui red button delete-post" data-request-url="{{.Link}}/avatar/delete" data-done-url="{{.Link}}">{{$.locale.Tr "settings.delete_current_avatar"}}</a>
 				</div>
 			</form>
@@ -157,7 +157,7 @@
 									</div>
 									{{end}}
 									<div class="field">
-										<button class="ui green button">{{$.locale.Tr "repo.settings.update_settings"}}</button>
+										<button class="button-default button--primary">{{$.locale.Tr "repo.settings.update_settings"}}</button>
 									</div>
 								</form>
 							</td>
@@ -230,7 +230,7 @@
 											<input id="push_mirror_interval" name="push_mirror_interval" value="{{if .push_mirror_interval}}{{.push_mirror_interval}}{{else}}{{.DefaultMirrorInterval}}{{end}}">
 										</div>
 										<div class="field">
-											<button class="ui green button">{{$.locale.Tr "repo.settings.mirror_settings.push_mirror.add"}}</button>
+											<button class="button-default button--primary">{{$.locale.Tr "repo.settings.mirror_settings.push_mirror.add"}}</button>
 										</div>
 									</form>
 								</td>
@@ -541,7 +541,7 @@
 
 				<div class="ui divider"></div>
 				<div class="field">
-					<button class="ui green button">{{$.locale.Tr "repo.settings.update_settings"}}</button>
+					<button class="button-default button--primary">{{$.locale.Tr "repo.settings.update_settings"}}</button>
 				</div>
 			</form>
 		</div>
@@ -587,7 +587,7 @@
 
 				<div class="ui divider"></div>
 				<div class="field">
-					<button class="ui green button">{{$.locale.Tr "repo.settings.update_settings"}}</button>
+					<button class="button-default button--primary">{{$.locale.Tr "repo.settings.update_settings"}}</button>
 				</div>
 			</form>
 		</div>
@@ -608,7 +608,7 @@
 				</div>
 
 				<div class="field">
-					<button class="ui green button">{{$.locale.Tr "repo.settings.update_settings"}}</button>
+					<button class="button-default button--primary">{{$.locale.Tr "repo.settings.update_settings"}}</button>
 				</div>
 			</form>
 
@@ -630,7 +630,7 @@
 							{{end}}
 						</span>
 						<div class="field">
-							<button class="ui green button" name="request_reindex_type" value="code">{{$.locale.Tr "repo.settings.reindex_button"}}</button>
+							<button class="button-default button--primary" name="request_reindex_type" value="code">{{$.locale.Tr "repo.settings.reindex_button"}}</button>
 						</div>
 					</div>
 				{{end}}
@@ -647,7 +647,7 @@
 						{{end}}
 					</span>
 					<div class="field">
-						<button class="ui green button" name="request_reindex_type" value="stats">{{$.locale.Tr "repo.settings.reindex_button"}}</button>
+						<button class="button-default button--primary" name="request_reindex_type" value="stats">{{$.locale.Tr "repo.settings.reindex_button"}}</button>
 					</div>
 				</div>
 			</form>

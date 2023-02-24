@@ -1,24 +1,16 @@
 <!DOCTYPE html>
-<html lang="{{.locale.Lang}}" class="theme-{{if .SignedUser.Theme}}{{.SignedUser.Theme}}{{else}}auto{{end}}">
+<html lang="en-US" class="theme-dark">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>{{if .Title}}{{.Title | RenderEmojiPlain}} - {{end}}{{if .Repository.Name}}{{.Repository.Name}} - {{end}}{{AppName}}</title>
+	<title>Git3 - git protocol for the open web</title>
 	<link rel="manifest" href="data:{{.ManifestData}}">
-	<meta name="theme-color" content="{{ThemeColorMetaTag}}">
-	<meta name="default-theme" content="{{DefaultTheme}}">
-	<meta name="author" content="{{if .Repository}}{{.Owner.Name}}{{else}}{{MetaAuthor}}{{end}}">
-	<meta name="description" content="{{if .Repository}}{{.Repository.Name}}{{if .Repository.Description}} - {{.Repository.Description}}{{end}}{{else}}{{MetaDescription}}{{end}}">
-	<meta name="keywords" content="{{MetaKeywords}}">
+	<meta name="description" content="decentrlized source code management platform">
+	<meta name="keywords" content="web3,git,github,decentrlized,dapp,sourcecode">
 	<meta name="referrer" content="no-referrer">
-{{if .GoGetImport}}
-	<meta name="go-import" content="{{.GoGetImport}} git {{.RepoCloneLink.HTTPS}}">
-	<meta name="go-source" content="{{.GoGetImport}} _ {{.GoDocDirectory}} {{.GoDocFile}}">
-{{end}}
-{{if and .EnableFeed .FeedURL}}
-	<link rel="alternate" type="application/atom+xml" title="" href="{{.FeedURL}}.atom">
-	<link rel="alternate" type="application/rss+xml" title="" href="{{.FeedURL}}.rss">
-{{end}}
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	<link rel="icon" href="{{AssetUrlPrefix}}/img/favicon.svg" type="image/svg+xml">
 	<link rel="alternate icon" href="{{AssetUrlPrefix}}/img/favicon.png" type="image/png">
 	<link rel="stylesheet" href="{{AssetUrlPrefix}}/css/index.css?v={{AssetVersion}}">

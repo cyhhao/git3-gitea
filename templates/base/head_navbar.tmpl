@@ -3,9 +3,9 @@
 	{{if .IsSigned}}
 		{{if .NotificationUnreadCount}}{{$notificationUnreadCount = call .NotificationUnreadCount}}{{end}}
 	{{end}}
-	<div class="item brand" style="justify-content: space-between;">
-		<a href="{{AppSubUrl}}/" aria-label="{{if .IsSigned}}{{.locale.Tr "dashboard"}}{{else}}{{.locale.Tr "home"}}{{end}}">
-			<img width="30" height="30" src="{{AssetUrlPrefix}}/img/logo.png" alt="{{.locale.Tr "logo"}}" aria-hidden="true">
+	<div class="item brand" style="justify-content: space-between; margin-left: -32px">
+		<a href="{{AppSubUrl}}/">
+			<img height="56px" src="{{AssetUrlPrefix}}/img/logo-text.svg" alt="logo" aria-hidden="true">
 		</a>
 		{{if .IsSigned}}
 		<a href="{{AppSubUrl}}/notifications" class="tooltip mobile-only" data-content='{{.locale.Tr "notifications"}}'>
@@ -203,17 +203,11 @@
 	{{else}}
 		<a class="item" target="_blank" rel="noopener noreferrer" href="https://docs.git3.sh">{{.locale.Tr "help"}}</a>
 		<div class="right stackable menu">
-			{{if .ShowRegistrationButton}}
-				<a class="item{{if .PageIsSignUp}} active{{end}}" href="{{AppSubUrl}}/user/sign_up">
-					{{svg "octicon-person"}} {{.locale.Tr "register"}}
-				</a>
-			{{end}}
-			<a class="item" href="{{AppSubUrl}}/git3-repo/create">
-				<span class="fitted">{{svg "octicon-plus"}}</span> {{.locale.Tr "new_repo"}}
+			<a href="{{AppSubUrl}}/git3-repo/create">
+				<button class="button-default">
+					<span class="fitted" style="margin-right: 2px">{{svg "octicon-plus"}}</span> {{.locale.Tr "new_repo"}}
+				</button>
 			</a>
-			<!-- <a class="item{{if .PageIsSignIn}} active{{end}}" rel="nofollow" href="{{AppSubUrl}}/user/login{{if not .PageIsSignIn}}?redirect_to={{.CurrentURL}}{{end}}">
-				{{svg "octicon-sign-in"}} {{.locale.Tr "sign_in"}}
-			</a> -->
-		</div><!-- end anonymous right menu -->
+		</div>
 	{{end}}
 </div>

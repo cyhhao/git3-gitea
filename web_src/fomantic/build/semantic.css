@@ -23,7 +23,6 @@
 *******************************/
 
 .ui.breadcrumb {
-  line-height: 1.4285em;
   display: inline-block;
   margin: 0 0;
   vertical-align: middle;
@@ -250,13 +249,13 @@
   background-color: #C0C1C2;
   background-image: none;
   box-shadow: 0 0 0 1px transparent inset;
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 .ui.active.button:hover {
   background-color: #C0C1C2;
   background-image: none;
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 .ui.active.button:active {
@@ -1005,7 +1004,7 @@
 .ui.basic.active.button {
   background: rgba(0, 0, 0, 0.05);
   box-shadow: '';
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 .ui.basic.buttons .active.button:hover,
@@ -6278,11 +6277,11 @@ a.inverted.ui.card:hover,
 }
 
 .ui.checkbox label:active::after {
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 .ui.checkbox input:active ~ label {
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 /*--------------
@@ -6295,11 +6294,11 @@ a.inverted.ui.card:hover,
 }
 
 .ui.checkbox input:focus ~ label:after {
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 .ui.checkbox input:focus ~ label {
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 /*--------------
@@ -6313,7 +6312,7 @@ a.inverted.ui.card:hover,
 
 .ui.checkbox input:checked ~ label:after {
   opacity: 1;
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 /*--------------
@@ -6327,7 +6326,7 @@ a.inverted.ui.card:hover,
 
 .ui.checkbox input:not([type=radio]):indeterminate ~ label:after {
   opacity: 1;
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 .ui.indeterminate.toggle.checkbox input:not([type=radio]):indeterminate ~ label:before {
@@ -6350,7 +6349,7 @@ a.inverted.ui.card:hover,
 
 .ui.checkbox input:not([type=radio]):indeterminate:focus ~ label:after,
 .ui.checkbox input:checked:focus ~ label:after {
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 /*--------------
@@ -6444,7 +6443,7 @@ a.inverted.ui.card:hover,
 }
 
 .ui.radio.checkbox input:focus ~ label:after {
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: #fff;
 }
 
 /* Indeterminate */
@@ -6460,7 +6459,7 @@ a.inverted.ui.card:hover,
 }
 
 .ui.radio.checkbox input:checked ~ label:after {
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: #fff;
 }
 
 /* Active Focus */
@@ -6470,7 +6469,7 @@ a.inverted.ui.card:hover,
 }
 
 .ui.radio.checkbox input:focus:checked ~ label:after {
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: #fff;
 }
 
 /*--------------
@@ -6553,7 +6552,7 @@ a.inverted.ui.card:hover,
 /* Active */
 
 .ui.slider.checkbox input:checked ~ label {
-  color: rgba(0, 0, 0, 0.95) !important;
+  color: #fff !important;
 }
 
 .ui.slider.checkbox input:checked ~ label:before {
@@ -6567,7 +6566,7 @@ a.inverted.ui.card:hover,
 /* Active Focus */
 
 .ui.slider.checkbox input:focus:checked ~ label {
-  color: rgba(0, 0, 0, 0.95) !important;
+  color: #fff !important;
 }
 
 .ui.slider.checkbox input:focus:checked ~ label:before {
@@ -6658,7 +6657,7 @@ a.inverted.ui.card:hover,
 /* Active */
 
 .ui.toggle.checkbox input:checked ~ label {
-  color: rgba(0, 0, 0, 0.95) !important;
+  color: #fff !important;
 }
 
 .ui.toggle.checkbox input:checked ~ label:before {
@@ -6673,7 +6672,7 @@ a.inverted.ui.card:hover,
 /* Active Focus */
 
 .ui.toggle.checkbox input:focus:checked ~ label {
-  color: rgba(0, 0, 0, 0.95) !important;
+  color: #fff !important;
 }
 
 .ui.toggle.checkbox input:focus:checked ~ label:before {
@@ -9175,7 +9174,7 @@ select.ui.dropdown {
 .ui.dropdown .menu .active.item {
   background: transparent;
   font-weight: 500;
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
   box-shadow: none;
   z-index: 12;
 }
@@ -9188,7 +9187,7 @@ select.ui.dropdown {
 
 .ui.dropdown .menu > .item:hover {
   background: rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
   z-index: 13;
 }
 
@@ -9283,7 +9282,7 @@ select.ui.dropdown {
 .ui.dropdown.selected,
 .ui.dropdown .menu .selected.item {
   background: rgba(0, 0, 0, 0.03);
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 /*--------------------
@@ -10265,28 +10264,6 @@ select.ui.dropdown {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* Scrollbars */
-
-.ui.inverted.dropdown .menu::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.ui.inverted.dropdown .menu::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.ui.inverted.dropdown .menu::-webkit-scrollbar-thumb:window-inactive {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.ui.inverted.dropdown .menu::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.35);
-}
-
-.ui.inverted.pointing.dropdown > .menu:after {
-  background: #1B1C1D;
-  box-shadow: -1px -1px 0 0 rgba(255, 255, 255, 0.15);
-}
 
 /*******************************
          Theme Overrides
@@ -10774,7 +10751,7 @@ select.ui.dropdown {
 .ui.form input[type="text"]:focus,
 .ui.form input[type="file"]:focus,
 .ui.form input[type="url"]:focus {
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
   border-color: #85B7D9;
   border-radius: 0.28571429rem;
   background: #FFFFFF;
@@ -10814,7 +10791,7 @@ select.ui.dropdown {
 }
 
 .ui.form textarea:focus {
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
   border-color: #85B7D9;
   border-radius: 0.28571429rem;
   background: #FFFFFF;
@@ -12444,8 +12421,8 @@ select.ui.dropdown {
     width: auto;
     margin-left: 0;
     margin-right: 0;
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 }
 
@@ -12454,8 +12431,8 @@ select.ui.dropdown {
     width: auto;
     margin-left: 0;
     margin-right: 0;
-    padding-left: 23%;
-    padding-right: 23%;
+    padding-left: 20%;
+    padding-right: 20%;
   }
 }
 
@@ -13357,15 +13334,13 @@ select.ui.dropdown {
 .ui.relaxed.grid > .column:not(.row),
 .ui.relaxed.grid > .row > .column,
 .ui.grid > .relaxed.row > .column {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  /* padding-left: 1.5rem; */
+  /* padding-right: 1.5rem; */
 }
 
 .ui[class*="very relaxed"].grid > .column:not(.row),
 .ui[class*="very relaxed"].grid > .row > .column,
 .ui.grid > [class*="very relaxed"].row > .column {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
 }
 
 /* Coupling with UI Divider */
@@ -25310,7 +25285,6 @@ i.icon.youtube.play:before {
   margin-top: 0.6em;
   max-width: auto;
   font-size: 1em;
-  line-height: 1.4285em;
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -26319,13 +26293,13 @@ a.ui.label:hover:before {
   background-color: #D0D0D0;
   border-color: #D0D0D0;
   background-image: none;
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 .ui.active.label:before {
   background-color: #D0D0D0;
   background-image: none;
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 /*-------------------
@@ -26337,14 +26311,14 @@ a.ui.active.label:hover {
   background-color: #C8C8C8;
   border-color: #C8C8C8;
   background-image: none;
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 .ui.labels a.active.label:hover:before,
 a.ui.active.label:hover:before {
   background-color: #C8C8C8;
   background-image: none;
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 /*-------------------
@@ -28328,11 +28302,6 @@ ol.ui.list ol li,
   color: #4183C4;
 }
 
-.ui.list .list > a.item:hover,
-.ui.list > a.item:hover {
-  color: #1e70bf;
-}
-
 /* Linked Item Icons */
 
 .ui.list .list > a.item > i.icons,
@@ -28600,7 +28569,7 @@ ol.ui.list ol li,
 
 .ui.link.list.list .active.item,
 .ui.link.list.list .active.item a:not(.ui) {
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 /* Inverted */
@@ -28648,27 +28617,22 @@ ol.ui.list ol li,
 
 .ui.selection.list .list > .item:hover,
 .ui.selection.list > .item:hover {
-  background: rgba(0, 0, 0, 0.03);
   color: rgba(0, 0, 0, 0.8);
 }
 
 .ui.selection.list .list > .item:active,
 .ui.selection.list > .item:active {
-  background: rgba(0, 0, 0, 0.05);
   color: rgba(0, 0, 0, 0.9);
 }
 
 .ui.selection.list .list > .item.active,
 .ui.selection.list > .item.active {
-  background: rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 /* Inverted */
-
 .ui.inverted.selection.list > .item {
   background: transparent;
-  color: rgba(255, 255, 255, 0.5);
 }
 
 .ui.inverted.selection.list > .item:hover {
@@ -30387,18 +30351,18 @@ ol.ui.suffixed.list li:before,
 
 .ui.menu .ui.dropdown .menu > .item:hover {
   background: rgba(0, 0, 0, 0.05) !important;
-  color: rgba(0, 0, 0, 0.95) !important;
+  color: #fff !important;
 }
 
 .ui.menu .ui.dropdown .menu > .selected.item {
   background: rgba(0, 0, 0, 0.05) !important;
-  color: rgba(0, 0, 0, 0.95) !important;
+  color: #fff !important;
 }
 
 .ui.menu .ui.dropdown .menu > .active.item {
   background: rgba(0, 0, 0, 0.03) !important;
   font-weight: 500 !important;
-  color: rgba(0, 0, 0, 0.95) !important;
+  color: #fff !important;
 }
 
 .ui.menu .ui.dropdown.item .menu .item:not(.filtered) {
@@ -30588,8 +30552,7 @@ ol.ui.suffixed.list li:before,
 .ui.menu .link.item:hover,
 .ui.menu a.item:hover {
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.03);
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 /*--------------
@@ -30600,7 +30563,7 @@ ol.ui.suffixed.list li:before,
 .ui.menu .link.item:active,
 .ui.menu a.item:active {
   background: rgba(0, 0, 0, 0.03);
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 /*--------------
@@ -30609,7 +30572,7 @@ ol.ui.suffixed.list li:before,
 
 .ui.menu .active.item {
   background: rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
   font-weight: normal;
   box-shadow: none;
 }
@@ -30624,8 +30587,7 @@ ol.ui.suffixed.list li:before,
 
 .ui.menu .active.item:hover,
 .ui.vertical.menu .active.item:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 /*--------------
@@ -30660,12 +30622,8 @@ Floated Menu / Item
 .ui.menu:not(.vertical) .right.item,
 .ui.menu:not(.vertical) .right.menu {
   display: flex;
+  align-items: center;
   margin-left: auto !important;
-}
-
-.ui.menu:not(.vertical) :not(.dropdown) > .left.menu,
-.ui.menu:not(.vertical) :not(.dropdown) > .right.menu {
-  display: inherit;
 }
 
 /* Center */
@@ -30806,7 +30764,7 @@ Floated Menu / Item
 .ui.vertical.menu .item .menu .active.item {
   background-color: transparent;
   font-weight: 500;
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 /*--------------
@@ -30850,7 +30808,7 @@ Floated Menu / Item
 
 .ui.tabular.menu .active.item {
   background: none #FFFFFF;
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
   border-top-width: 1px;
   border-color: #D4D4D5;
   font-weight: 500;
@@ -30896,7 +30854,7 @@ Floated Menu / Item
 
 .ui.bottom.tabular.menu .active.item {
   background: none #FFFFFF;
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
   border-color: #D4D4D5;
   margin: -1px 0 0 0;
   border-radius: 0 0 0.28571429rem 0.28571429rem !important;
@@ -30922,7 +30880,7 @@ Floated Menu / Item
 
 .ui.vertical.tabular.menu .active.item {
   background: none #FFFFFF;
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
   border-color: #D4D4D5;
   margin: 0 -1px 0 0;
   border-radius: 0.28571429rem 0 0 0.28571429rem !important;
@@ -30949,7 +30907,7 @@ Floated Menu / Item
 
 .ui.vertical.right.tabular.menu .active.item {
   background: none #FFFFFF;
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
   border-color: #D4D4D5;
   margin: 0 0 0 -1px;
   border-radius: 0 0.28571429rem 0.28571429rem 0 !important;
@@ -31002,7 +30960,7 @@ Floated Menu / Item
   border-top: none;
   padding-top: 0.92857143em;
   background-color: rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
   box-shadow: none;
 }
 
@@ -31025,17 +30983,10 @@ Floated Menu / Item
   align-self: center;
   box-shadow: none;
   border: none;
-  padding: 0.78571429em 0.92857143em;
-  margin: 0 0.35714286em;
+  padding: 20px 32px;
+  margin: 0;
   background: none;
   transition: color 0.1s ease;
-  border-radius: 0.28571429rem;
-}
-
-/* No Divider */
-
-.ui.secondary.menu .item:before {
-  display: none !important;
 }
 
 /* Header */
@@ -31046,19 +30997,12 @@ Floated Menu / Item
   background: none transparent;
 }
 
-/* Image */
-
-.ui.secondary.menu .item > img:not(.ui) {
-  margin: 0;
-}
-
 /* Hover */
 
 .ui.secondary.menu .dropdown.item:hover,
 .ui.secondary.menu .link.item:hover,
 .ui.secondary.menu a.item:hover {
-  background: rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 /* Active */
@@ -31066,7 +31010,7 @@ Floated Menu / Item
 .ui.secondary.menu .active.item {
   box-shadow: none;
   background: rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
   border-radius: 0.28571429rem;
 }
 
@@ -31075,7 +31019,7 @@ Floated Menu / Item
 .ui.secondary.menu .active.item:hover {
   box-shadow: none;
   background: rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 /* Inverted */
@@ -31156,7 +31100,6 @@ Floated Menu / Item
 .ui.secondary.pointing.menu {
   margin-left: 0;
   margin-right: 0;
-  border-bottom: 2px solid rgba(34, 36, 38, 0.15);
 }
 
 .ui.secondary.pointing.menu .item {
@@ -31164,9 +31107,7 @@ Floated Menu / Item
   border-bottom-style: solid;
   border-radius: 0;
   align-self: flex-end;
-  margin: 0 0 -2px;
-  padding: 0.85714286em 1.14285714em;
-  border-bottom-width: 2px;
+  padding: 28px;
   transition: color 0.1s ease;
 }
 
@@ -31223,14 +31164,14 @@ Floated Menu / Item
   box-shadow: none;
   border-color: currentColor;
   font-weight: 500;
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 /* Active Hover */
 
 .ui.secondary.pointing.menu .active.item:hover {
   border-color: currentColor;
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 /* Active Dropdown */
@@ -31399,7 +31340,7 @@ Floated Menu / Item
   border: none;
   box-shadow: none;
   font-weight: normal;
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 /*--- active hover ---*/
@@ -31772,7 +31713,6 @@ Floated Menu / Item
 
 .ui.floated.menu {
   float: left;
-  margin: 0 0.5rem 0 0;
 }
 
 .ui.floated.menu .item:last-child:before {
@@ -32604,7 +32544,6 @@ Floated Menu / Item
   margin: 1em 0;
   background: #F8F8F9;
   padding: 1em 1.5em;
-  line-height: 1.4285em;
   color: rgba(0, 0, 0, 0.87);
   transition: opacity 0.1s ease, color 0.1s ease, background 0.1s ease, box-shadow 0.1s ease;
   border-radius: 0.28571429rem;
@@ -34710,7 +34649,7 @@ template {
 .ui.search > .prompt:focus {
   border-color: rgba(34, 36, 38, 0.35);
   background: #FFFFFF;
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 /*--------------------
@@ -36034,7 +35973,6 @@ body {
   background: #FFFFFF;
   font-family: var(--fonts-regular);
   font-size: 14px;
-  line-height: 1.4285em;
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -36097,7 +36035,6 @@ h5:last-child {
 
 p {
   margin: 0 0 1em;
-  line-height: 1.4285em;
 }
 
 p:first-child {
@@ -36846,7 +36783,7 @@ input::selection {
 .ui.definition.table tr td.definition {
   background: rgba(0, 0, 0, 0.03);
   font-weight: 500;
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
   text-transform: '';
   box-shadow: '';
   text-align: '';
@@ -37320,7 +37257,7 @@ input::selection {
 .ui.ui.selectable.table > tbody > tr:hover,
 .ui.table tbody tr td.selectable:hover {
   background: rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 .ui.ui.selectable.inverted.table > tbody > tr:hover,
@@ -37457,7 +37394,7 @@ input::selection {
 
 .ui.striped.selectable.selectable.selectable.table tbody tr.active:hover {
   background: #EFEFEF;
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 /*--------------
@@ -38316,7 +38253,7 @@ input::selection {
 /* Sorted */
 
 .ui.sortable.table thead th.sorted {
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 .ui.sortable.table:not(.basic) thead th.sorted {
@@ -38330,7 +38267,7 @@ input::selection {
 /* Sorted Hover */
 
 .ui.sortable.table thead th.sorted:hover {
-  color: rgba(0, 0, 0, 0.95);
+  color: #fff;
 }
 
 .ui.sortable.table:not(.basic) thead th.sorted:hover {

@@ -57,6 +57,7 @@ func DeleteUser(ctx context.Context, u *user_model.User, purge bool) (err error)
 		Where("follow.user_id = ?", u.ID).Find(&followeeIDs); err != nil {
 		return fmt.Errorf("get all followees: %w", err)
 	} else if _, err = e.Decr("num_followers").In("id", followeeIDs).Update(new(user_model.User)); err != nil {
+
 		return fmt.Errorf("decrease user num_followers: %w", err)
 	}
 

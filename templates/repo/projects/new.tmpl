@@ -6,7 +6,7 @@
 			{{template "repo/issue/navbar" .}}
 			{{if and .CanWriteProjects .PageIsEditProject}}
 			<div class="ui right floated secondary menu">
-				<a class="ui green button" href="{{$.RepoLink}}/projects/new">{{.locale.Tr "repo.milestones.new"}}</a>
+				<a class="button-default button--primary" href="{{$.RepoLink}}/projects/new">{{.locale.Tr "repo.milestones.new"}}</a>
 			</div>
 			{{end}}
 		</div>
@@ -53,11 +53,11 @@
 					<a class="ui primary basic button" href="{{.RepoLink}}/projects">
 						{{.locale.Tr "repo.milestones.cancel"}}
 					</a>
-					<button class="ui green button">
+					<button class="button-default button--primary">
 						{{.locale.Tr "repo.projects.modify"}}
 					</button>
 					{{else}}
-						<button class="ui green button">
+						<button class="button-default button--primary">
 							{{.locale.Tr "repo.projects.create"}}
 						</button>
 					{{end}}

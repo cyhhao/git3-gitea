@@ -1,55 +1,47 @@
 {{template "base/head" .}}
 <div class="page-content home">
 	<div class="ui stackable middle very relaxed page grid">
-		<div class="sixteen wide center aligned centered column">
-			<div>
-				<img class="logo" width="220" height="220" src="{{
-					AssetUrlPrefix
-				}}/img/logo.png" alt="{{.locale.Tr "logo"}}"/>
+		<div class="">
+			<div class="homepage-hero-text-area">
+				<div class="homepage-hero-text-1">Git protocol</div>
+				<div class="homepage-hero-text-2">For the open web</div>
 			</div>
-			<div class="hero">
-				<h1 class="ui icon header title">
-					{{ AppName }}
-				</h1>
-				<h2>{{.locale.Tr "startpage.app_desc"}}</h2>
+			<img alt="hero" style="width: 100%" class="hero-img" src="{{AssetUrlPrefix}}/img/homepage-hero.svg" />
+			<div class="row">
+				<a href="/explore/repos">
+				<div class="button-default button--primary" style="margin-right: 16px">Explore Repostries</div>
+				</a>
+				<a href="https://docs.git3.sh/" target="_blank">
+					<div class="button-default button--secondary">Learn More</div>
+				</a>
 			</div>
-		</div>
-	</div>
-	<div class="ui stackable middle very relaxed page grid">
-		<div class="eight wide center column">
-			<h1 class="hero ui icon header">
-				{{svg "octicon-flame"}} {{.locale.Tr "startpage.install"}}
-			</h1>
-			<p class="large">
-				{{.locale.Tr "startpage.install_desc" | Str2html}}
-			</p>
-		</div>
-		<div class="eight wide center column">
-			<h1 class="hero ui icon header">
-				{{svg "octicon-device-desktop"}} {{.locale.Tr "startpage.platform"}}
-			</h1>
-			<p class="large">
-				{{.locale.Tr "startpage.platform_desc" | Str2html}}
-			</p>
-		</div>
-	</div>
-	<div class="ui stackable middle very relaxed page grid">
-		<div class="eight wide center column">
-			<h1 class="hero ui icon header">
-				{{svg "octicon-rocket"}} {{.locale.Tr "startpage.lightweight"}}
-			</h1>
-			<p class="large">
-				{{.locale.Tr "startpage.lightweight_desc" | Str2html}}
-			</p>
-		</div>
-		<div class="eight wide center column">
-			<h1 class="hero ui icon header">
-				{{svg "octicon-code"}} {{.locale.Tr "startpage.license"}}
-			</h1>
-			<p class="large">
-				{{.locale.Tr "startpage.license_desc" | Str2html}}
-			</p>
+			<div class="row" style="margin-top: 110px; gap: 48px">
+				<div class="column">
+					<img class="homepage-icon" style="width: 85px; height: 85px" src="{{AssetUrlPrefix}}/img/censorship.svg" />
+					<div class="homepage-icon-text">Anti Censorship</div>
+					<div class="homepage-icon-des">Use crypto wallet to login and do authentication</div>
+				</div>
+				<div class="column">
+					<img class="homepage-icon" style="width: 85px; height: 85px" src="{{AssetUrlPrefix}}/img/decentralized.svg" />
+					<div class="homepage-icon-text">Fully Decentralized</div>
+					<div class="homepage-icon-des">Access control with smart contracts</div>
+
+				</div>
+				<div class="column">
+					<img class="homepage-icon" style="width: 85px; height: 85px" src="{{AssetUrlPrefix}}/img/storage.svg" />
+					<div class="homepage-icon-text">Onchain Storage</div>
+					<div class="homepage-icon-des">Store your code cheap and forever on blockchain system</div>
+				</div>
+			</div>
+
+			<div class="row" style="margin-top: 110px;">
+				<div style="width: 50%;">
+					<div class="homepage-icon-text"></div>
+				</div>
+				<div style="width: 50%;">
+				
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
-{{template "base/footer" .}}

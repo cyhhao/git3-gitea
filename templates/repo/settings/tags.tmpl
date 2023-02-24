@@ -62,14 +62,14 @@
 								{{end}}
 								<div class="field">
 									{{if .PageIsEditProtectedTag}}
-									<button class="ui green button">
+									<button class="button-default button--primary">
 										{{$.locale.Tr "save"}}
 									</button>
 									<a class="ui primary button" href="{{$.RepoLink}}/settings/tags">
 										{{$.locale.Tr "cancel"}}
 									</a>
 									{{else}}
-									<button class="ui green button">
+									<button class="button-default button--primary">
 										{{$.locale.Tr "repo.settings.tags.protection.create"}}
 									</button>
 									{{end}}

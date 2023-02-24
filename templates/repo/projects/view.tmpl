@@ -8,8 +8,8 @@
 			</div>
 			<div class="column right aligned">
 				{{if and .CanWriteProjects (not .Repository.IsArchived)}}
-					<a class="ui green button show-modal item" href="{{$.RepoLink}}/issues/new/choose?project={{$.Project.ID}}">{{.locale.Tr "repo.issues.new"}}</a>
-					<a class="ui green button show-modal item" data-modal="#new-board-item">{{.locale.Tr "new_project_board"}}</a>
+					<a class="button-default button--primary show-modal item" href="{{$.RepoLink}}/issues/new/choose?project={{$.Project.ID}}">{{.locale.Tr "repo.issues.new"}}</a>
+					<a class="button-default button--primary show-modal item" data-modal="#new-board-item">{{.locale.Tr "new_project_board"}}</a>
 				{{end}}
 				<div class="ui small modal new-board-modal" id="new-board-item">
 					<div class="header">
@@ -34,7 +34,7 @@
 
 							<div class="text right actions">
 								<div class="ui cancel button">{{$.locale.Tr "settings.cancel"}}</div>
-								<button data-url="{{$.RepoLink}}/projects/{{$.Project.ID}}" class="ui green button" id="new_board_submit">{{$.locale.Tr "repo.projects.board.new_submit"}}</button>
+								<button data-url="{{$.RepoLink}}/projects/{{$.Project.ID}}" class="button-default button--primary" id="new_board_submit">{{$.locale.Tr "repo.projects.board.new_submit"}}</button>
 							</div>
 						</form>
 					</div>

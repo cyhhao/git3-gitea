@@ -1,6 +1,6 @@
 :root {
   /* fonts */
-  --fonts-proportional: -apple-system, "Segoe UI", system-ui, "Roboto", "Helvetica Neue", "Arial";
+  --fonts-proportional: "Inter", -apple-system, "Segoe UI", system-ui, "Roboto", "Helvetica Neue", "Arial";
   --fonts-monospace: "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace, var(--fonts-emoji);
   --fonts-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Twemoji Mozilla";
   /* backgrounds */
@@ -11,7 +11,7 @@
   --opacity-disabled: .55;
   --height-loading: 12rem;
   /* base colors */
-  --color-primary: #4183c4;
+  --color-primary: #6752f7;
   --color-primary-contrast: #ffffff;
   --color-primary-dark-1: #3876b3;
   --color-primary-dark-2: #31699f;
@@ -20,8 +20,8 @@
   --color-primary-dark-5: #193450;
   --color-primary-dark-6: #0c1a28;
   --color-primary-dark-7: #04080c;
-  --color-primary-light-1: #548fca;
-  --color-primary-light-2: #679cd0;
+  --color-primary-light-1: #6752f7;
+  --color-primary-light-2: #6752f7;
   --color-primary-light-3: #7aa8d6;
   --color-primary-light-4: #8db5dc;
   --color-primary-light-5: #b3cde7;
@@ -134,9 +134,9 @@
   --color-orange-badge-hover-bg: #f2711c4d;
   --color-git: #f05133;
   /* target-based colors */
-  --color-body: #ffffff;
-  --color-text-dark: #080808;
-  --color-text: #212121;
+  --color-body: #111113;
+  --color-text-dark: #C4C4C4;
+  --color-text: #C4C4C4;
   --color-text-light: #555555;
   --color-text-light-1: #6a6a6a;
   --color-text-light-2: #808080;
@@ -151,7 +151,7 @@
   --color-input-toggle-background: #dedede;
   --color-input-border: #dedede;
   --color-input-border-hover: #cecece;
-  --color-navbar: #f8f8f8;
+  --color-navbar: #000000;
   --color-navbar-transparent: #f8f8f800;
   --color-light: #00000006;
   --color-light-mimic-enabled: rgba(0, 0, 0, calc(6 / 255 * 222 / 255 / var(--opacity-disabled)));
@@ -183,8 +183,6 @@
   --color-accent: var(--color-primary-light-1);
   --color-small-accent: var(--color-primary-light-6);
   --color-active-line: #fffbdd;
-
-  accent-color: var(--color-accent);
   color-scheme: light;
 }
 
@@ -216,8 +214,9 @@ h6 {
 }
 
 body {
-  color: var(--color-text);
-  background-color: var(--color-body);
+
+  color: #C4C4C4;
+  background-color: #111113;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -252,39 +251,6 @@ progress {
   border-radius: 6px;
   border: none;
   overflow: hidden;
-}
-progress::-webkit-progress-bar {
-  background: var(--color-secondary-dark-1);
-}
-progress::-webkit-progress-value {
-  background-color: var(--color-accent);
-}
-progress::-moz-progress-bar {
-  background-color: var(--color-accent);
-}
-
-* {
-  scrollbar-color: var(--color-primary) transparent;
-  caret-color: var(--color-caret);
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-::-webkit-scrollbar-thumb {
-  box-shadow: inset 0 0 0 6px var(--color-primary);
-  border: 2px solid transparent;
-  border-radius: 5px !important;
-}
-::-webkit-scrollbar-thumb:window-inactive {
-  box-shadow: inset 0 0 0 6px var(--color-primary);
-}
-::-webkit-scrollbar-thumb:hover {
-  box-shadow: inset 0 0 0 6px var(--color-primary-dark-2);
-}
-::-webkit-scrollbar-corner {
-  background: transparent;
 }
 
 ::file-selector-button {
@@ -706,7 +672,6 @@ a.commit-statuses-trigger {
 .page-content .header-wrapper,
 .page-content .new-menu {
   margin-top: -15px !important;
-  padding-top: 15px !important;
 }
 
 .ui.input.focus > input,
@@ -755,8 +720,7 @@ a.commit-statuses-trigger {
 .ui.menu .dropdown.item:hover,
 .ui.menu .link.item:hover,
 .ui.menu a.item:hover {
-  color: var(--color-text);
-  background: var(--color-hover);
+  color: #fff;
 }
 
 .ui.menu .active.item,
@@ -857,14 +821,14 @@ a.commit-statuses-trigger {
 .ui.secondary.menu .dropdown.item:hover,
 .ui.secondary.menu .link.item:hover,
 .ui.secondary.menu a.item:hover {
-  color: var(--color-text);
-  background: var(--color-hover);
+  // color: var(--color-text);
+  // background: var(--color-hover);
 }
 
 .ui.secondary.menu .active.item,
 .ui.secondary.menu .active.item:hover {
-  color: var(--color-text);
-  background: var(--color-active);
+  // color: var(--color-text);
+  // background: var(--color-active);
 }
 
 .ui.secondary.menu.tight .item {
@@ -1174,22 +1138,15 @@ a.ui.card:hover,
   padding-bottom: 80px;
 }
 
-/* enable fluid page widths for medium size viewports */
-@media @mediaMdAndUp and @mediaLgAndDown {
-  .ui.ui.ui.container:not(.fluid) {
-    width: calc(100vw - 3em);
-  }
-}
-
 .following.bar {
   z-index: 900;
   left: 0;
   margin: 0 !important;
 
-  &.light {
-    background: var(--color-header-bar);
-    border-bottom: 1px solid var(--color-secondary);
-  }
+  // &.light {
+  //   // background: var(--color-header-bar);
+  //   border-bottom: 1px solid var(--color-secondary);
+  // }
 
   .column .menu {
     margin-top: 0;
@@ -1230,7 +1187,7 @@ a.ui.card:hover,
   #navbar {
     width: 100vw;
     min-height: 52px;
-    padding: 0 .5rem;
+    padding: 0 48px;
   }
 
   #navbar .brand {
@@ -1869,7 +1826,6 @@ footer {
 .ui.menu.new-menu {
   margin-bottom: 15px;
   background: var(--color-navbar);
-  border-bottom: 1px solid var(--color-secondary) !important;
   overflow: auto;
 }
 
@@ -1883,17 +1839,11 @@ footer {
 .ui.menu.new-menu::after {
   position: absolute;
   display: block;
-  background: linear-gradient(to right, var(--color-navbar-transparent), var(--color-navbar) 100%);
-  content: '';
   right: 0;
   height: 39px;
   width: 60px;
   visibility: visible;
   pointer-events: none;
-}
-
-.ui.menu.new-menu.shadow-body::after {
-  background: linear-gradient(to right, transparent, var(--color-body) 100%);
 }
 
 .ui.menu.new-menu .item {
@@ -2686,4 +2636,57 @@ table th[data-sortt-desc] {
 
 .color-text-light-2 {
   color: var(--color-text-light-2);
+}
+
+.button-default {
+  height: 48px;
+  padding: 0 16px;
+  color: #000;
+  background-color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  display: inline-flex;
+}
+
+.button--primary {
+  color: #fff;
+  background-color: #6752f7;
+}
+
+.button--secondary {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: #252525;
+}
+
+.button-default:hover {
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: left;
+}
+
+.homepage-icon-text {
+  margin-top: 28px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.homepage-icon-des {
+  margin-top: 28px;
+  font-size: 16px;
+  color: #C4C4C4;
 }

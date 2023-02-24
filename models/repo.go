@@ -217,7 +217,6 @@ func DeleteRepository(doer *user_model.User, uid, repoID int64) error {
 	if _, err := db.DeleteByBean(ctx, &git_model.LFSMetaObject{RepositoryID: repoID}); err != nil {
 		return err
 	}
-
 	// Remove archives
 	var archives []*repo_model.RepoArchiver
 	if err = sess.Where("repo_id=?", repoID).Find(&archives); err != nil {

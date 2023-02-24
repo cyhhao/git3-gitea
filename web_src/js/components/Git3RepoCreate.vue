@@ -33,7 +33,7 @@
 
           <div class="inline field">
             <label></label>
-            <button class="ui green button " :class="{ 'disabled': !isActive && isConnected }" @click="clickSubmit">
+            <button class="button-default button--primary " :class="{ 'disabled': !isActive && isConnected }" @click="clickSubmit">
               {{ isConnected ? (mode == "Create" ? "Create" : "Transfer Owner") : "Connect Wallet" }}
             </button>
           </div>

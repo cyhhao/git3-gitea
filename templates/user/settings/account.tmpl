@@ -27,7 +27,7 @@
 				</div>
 
 				<div class="field">
-					<button class="ui green button">{{$.locale.Tr "settings.change_password"}}</button>
+					<button class="button-default button--primary">{{$.locale.Tr "settings.change_password"}}</button>
 					<a href="{{AppSubUrl}}/user/forgot_password?email={{.Email}}">{{.locale.Tr "auth.forgot_password"}}</a>
 				</div>
 			</form>
@@ -49,7 +49,7 @@
 						{{.locale.Tr "settings.email_desc"}}
 						<div class="right floated content">
 							<div class="field">
-								<button class="ui green button">{{$.locale.Tr "settings.email_notifications.submit"}}</button>
+								<button class="button-default button--primary">{{$.locale.Tr "settings.email_notifications.submit"}}</button>
 							</div>
 						</div>
 						<div class="right floated content">
@@ -127,7 +127,7 @@
 					<label for="email">{{.locale.Tr "settings.add_new_email"}}</label>
 					<input id="email" name="email" type="email" required {{if not .CanAddEmails}}disabled{{end}}>
 				</div>
-				<button class="ui green button" {{if not .CanAddEmails}}disabled{{end}}>
+				<button class="button-default button--primary" {{if not .CanAddEmails}}disabled{{end}}>
 					{{.locale.Tr "settings.add_email"}}
 				</button>
 			</form>
