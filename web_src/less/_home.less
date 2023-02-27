@@ -1,5 +1,6 @@
 .homepage-hero-text-area {
   text-align: left;
+  position: relative;
 }
 
 .homepage-hero-text-1 {
@@ -8,11 +9,65 @@
   font-size: 76px;
   font-weight: bold;
   transform: translateY(20px);
+  z-index: 2;
+  position: relative;
 }
 
 .homepage-hero-text-2 {
+  position: relative;
   color: #6E7681;
   font-family: Inter;
   font-size: 76px;
   font-weight: bold;
+}
+
+.hompage-hero-shadow {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  z-index: 1;
+  width: 800px;
+  opacity: 0.8;
+}
+
+.homepage-section-header {
+  color: #fff;
+  font-size: 56px;
+  font-weight: bold;
+}
+
+.homepage-use-section {
+  display: flex;
+  gap: 40px;
+  padding: 40px 0;
+  margin-top: 40px;
+}
+
+.homepage-use-explain {
+  text-align: left;
+  width: 50%;
+  display: inline-block;
+  padding-right: 40px;
+}
+
+.homepage-use-explain-header {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.homepage-use-explain-content-text {
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.homepage-footer {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #262626;
+  margin-top: 30px;
+  border-radius: 10px;
 }

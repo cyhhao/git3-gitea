@@ -5,7 +5,7 @@
 	{{end}}
 	<div class="item brand" style="justify-content: space-between; margin-left: -32px">
 		<a href="{{AppSubUrl}}/">
-			<img height="56px" src="{{AssetUrlPrefix}}/img/logo-text.svg" alt="logo" aria-hidden="true">
+			<img height="56px" src="{{AssetUrlPrefix}}/img/logo.svg" alt="logo" aria-hidden="true">
 		</a>
 		{{if .IsSigned}}
 		<a href="{{AppSubUrl}}/notifications" class="tooltip mobile-only" data-content='{{.locale.Tr "notifications"}}'>
@@ -201,13 +201,6 @@
 			</div><!-- end dropdown avatar menu -->
 		</div><!-- end signed user right menu -->
 	{{else}}
-		<a class="item" target="_blank" rel="noopener noreferrer" href="https://docs.git3.sh">{{.locale.Tr "help"}}</a>
-		<div class="right stackable menu">
-			<a href="{{AppSubUrl}}/git3-repo/create">
-				<button class="button-default">
-					<span class="fitted" style="margin-right: 2px">{{svg "octicon-plus"}}</span> {{.locale.Tr "new_repo"}}
-				</button>
-			</a>
-		</div>
+		<a class="item" target="_blank" rel="noopener noreferrer" href="https://docs.git3.sh">Docs</a>
 	{{end}}
 </div>

@@ -37,32 +37,32 @@
   --color-primary-alpha-80: #4183c4cc;
   --color-primary-alpha-90: #4183c4e1;
   --color-secondary: #dedede;
-  --color-secondary-dark-1: #cecece;
-  --color-secondary-dark-2: #bfbfbf;
-  --color-secondary-dark-3: #a0a0a0;
-  --color-secondary-dark-4: #909090;
-  --color-secondary-dark-5: #818181;
-  --color-secondary-dark-6: #717171;
-  --color-secondary-dark-7: #626262;
-  --color-secondary-dark-8: #525252;
-  --color-secondary-dark-9: #434343;
-  --color-secondary-dark-10: #333333;
-  --color-secondary-dark-11: #242424;
-  --color-secondary-dark-12: #141414;
-  --color-secondary-dark-13: #040404;
-  --color-secondary-light-1: #e5e5e5;
-  --color-secondary-light-2: #ebebeb;
-  --color-secondary-light-3: #f2f2f2;
-  --color-secondary-light-4: #f8f8f8;
-  --color-secondary-alpha-10: #dedede19;
-  --color-secondary-alpha-20: #dedede33;
-  --color-secondary-alpha-30: #dedede4b;
-  --color-secondary-alpha-40: #dedede66;
-  --color-secondary-alpha-50: #dedede80;
-  --color-secondary-alpha-60: #dedede99;
-  --color-secondary-alpha-70: #dededeb3;
-  --color-secondary-alpha-80: #dededecc;
-  --color-secondary-alpha-90: #dededee1;
+  --color-secondary-dark-1: #505665;
+  --color-secondary-dark-2: #5b6273;
+  --color-secondary-dark-3: #71798e;
+  --color-secondary-dark-4: #7f8699;
+  --color-secondary-dark-5: #8c93a4;
+  --color-secondary-dark-6: #9aa0af;
+  --color-secondary-dark-7: #a8adba;
+  --color-secondary-dark-8: #b6bac5;
+  --color-secondary-dark-9: #c4c7d0;
+  --color-secondary-dark-10: #d2d4db;
+  --color-secondary-dark-11: #dfe1e6;
+  --color-secondary-dark-12: #edeef1;
+  --color-secondary-dark-13: #fbfbfc;
+  --color-secondary-light-1: #373b46;
+  --color-secondary-light-2: #292c34;
+  --color-secondary-light-3: #1c1e23;
+  --color-secondary-light-4: #0e0f11;
+  --color-secondary-alpha-10: #454a5719;
+  --color-secondary-alpha-20: #454a5733;
+  --color-secondary-alpha-30: #454a574b;
+  --color-secondary-alpha-40: #454a5766;
+  --color-secondary-alpha-50: #454a5780;
+  --color-secondary-alpha-60: #454a5799;
+  --color-secondary-alpha-70: #454a57b3;
+  --color-secondary-alpha-80: #454a57cc;
+  --color-secondary-alpha-90: #454a57e1;
   /* console colors */
   --color-console-fg: #ffffff;
   --color-console-bg: #171717;
@@ -2638,6 +2638,10 @@ table th[data-sortt-desc] {
   color: var(--color-text-light-2);
 }
 
+a:hover {
+  text-decoration: none !important;
+}
+
 .button-default {
   height: 48px;
   padding: 0 16px;
@@ -2650,6 +2654,11 @@ table th[data-sortt-desc] {
   justify-content: center;
   border: 0;
   display: inline-flex;
+}
+
+.button--big {
+  height: 64px;
+  min-width: 200px;
 }
 
 .button--primary {
@@ -2689,4 +2698,19 @@ table th[data-sortt-desc] {
   margin-top: 28px;
   font-size: 16px;
   color: #C4C4C4;
+}
+
+.language-bash {
+  padding: 20px;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  text-align: left;
+  display: inline-block;
+  width: 100%;
+  font-size: 16px;
+}
+
+.comment {
+  color: rgba(255, 255, 255, 0.6) !important;
 }
