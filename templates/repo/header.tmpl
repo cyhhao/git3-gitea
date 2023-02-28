@@ -220,11 +220,11 @@
 				{{end}}
 
 				{{template "custom/extra_tabs" .}}
-				<div class="right menu">
+				<!-- <div class="right menu">
 					<a class="item" href="{{AppSubUrl}}/git3-repo/create?transfer={{.Repository.Name}}">
 						<span class="fitted">{{svg "octicon-sign-in"}}</span> {{.locale.Tr "repo.settings.transfer"}}
 					</a>
-				</div>
+				</div> -->
 				
 				{{if .Permission.IsAdmin}}
 					<div class="right menu">
