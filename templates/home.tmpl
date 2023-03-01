@@ -236,12 +236,15 @@
 		}
 		apply.disabled = true;
 		apply.innerHTML = "⌛️";
-		let newwindow = window.open();
+		let newwindow = window.open(
+			"about:blank",
+			"twitter_git3",
+			"height=800,width=600"
+		);
 
 		let txt = `Hi%2C%20I%27m%20experimenting%20with%20%23git3%2C%20it%27s%20a%20git%20protocol%20for%20web3.%20%0ARequesting%20faucet%20funds%20into%20${address}%20%40git3protocol%0Agit3.sh`;
 
 		newwindow.location = "https://twitter.com/intent/tweet?text=" + txt;
-
 		let res = await axios.post(
 			"/api/v1/faucet/request",
 			{
