@@ -120,7 +120,7 @@
 							</div>
 						</div>
 					</div>
-					<div style="width: 50%; display: inline-block">
+					<div style="width: 60%; display: inline-block">
 						<code class="language-bash">
 							<p>~ git3 wallet create</p>
 							<br />
@@ -145,7 +145,7 @@
 						</div>
 					</div>
 
-					<div style="width: 50%; display: inline-block; text-align: left">
+					<div style="width: 60%; display: inline-block; text-align: left">
 						<input
 							id="address"
 							type="text"
@@ -196,21 +196,34 @@
 							</div>
 						</div>
 					</div>
-					<div style="width: 50%; display: inline-block">
+					<div style="width: 60%; display: inline-block">
+						<div class='sub-heading'>Use EthStorage Testnet</div>
 						<code class="language-bash">
+							<p class="comment">// create a repo on playground hub on EthStorage</p>
 							<p>~ git3 repo create git3://playground.w3q/repo_name</p>
 							<br />
-							<p class="comment">
-								// create a repo on playground hub on ETHStorage
-							</p>
+							<p class="comment">// add a git3 remote to your git repo</p>
+							<p>~ git remote add web3 git3://playground.w3q/repo_name</p>
 							<br />
-							<p>~ git remote add w3q git3://playground.w3q/repo_name</p>
+							<p class="comment">// push you code!</p>
+							<p>~ git push web3 main</p>
 							<br />
-							<p class="comment">// add a w3q remote to your git repo</p>
+						</code>
+						<div class='sub-heading' style="margin-top: 20px">Use Arbitrum Testnet</div>
+						<code class="language-bash">
+							<p class="comment">// create a repo on playground hub on arbitrum goerli network</p>
+							<p>~ git3 repo create git3://playground.arbg/repo_name</p>
 							<br />
-							<p>~ git push w3q main</p>
+							<p class="comment">// add a git3 remote to your git repo</p>
+							<p>~ git remote add web3 git3://playground.arbg/repo_name</p>
 							<br />
-							<p class="comment">// here you go!</p>
+							<p class="comment">// push you code!</p>
+							<p>~ git push web3 main</p>
+							<br />
+						</code>
+						<div class='sub-heading' style="margin-top: 20px">Use Arbitrum Nove Mainnet</div>
+						<code class="language-bash">
+							<p>Replace `arbg` with `arb` above</p>
 						</code>
 					</div>
 				</div>
@@ -220,7 +233,9 @@
 				<div style="text-align: left">
 					<img src="{{ AssetUrlPrefix }}/img/logo.svg" class="footer-logo" />
 				</div>
-				<div class="homepage-footer"></div>
+				<div class="homepage-footer">
+					<div>Proudly developed on git3, twitter <a href="https://twitter.com/git3protocol" target="_blank">@git3protocol</a></div>
+				</div>
 			</div>
 		</div>
 	</div>
