@@ -1,72 +1,135 @@
 {{template "base/head" .}}
+<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+
 <div class="page-content home">
 	<div class="ui stackable middle very relaxed page grid">
 		<div class="">
 			<div class="homepage-hero-text-area">
 				<div class="homepage-hero-text-1">Git protocol</div>
-				<img class="hompage-hero-shadow" src="{{AssetUrlPrefix}}/img/homepage-hero-shadow.svg" />
+				<img
+					class="hompage-hero-shadow"
+					src="{{ AssetUrlPrefix }}/img/homepage-hero-shadow.svg"
+				/>
 				<div class="homepage-hero-text-2">For the open web</div>
 			</div>
-			<img alt="hero" style="width: 100%" class="hero-img" src="{{AssetUrlPrefix}}/img/homepage-hero.svg" />
+			<img
+				alt="hero"
+				style="width: 100%"
+				class="hero-img"
+				src="{{ AssetUrlPrefix }}/img/homepage-hero.svg"
+			/>
 			<div class="row" style="margin-top: 10px">
 				<a href="/explore/repos">
-				<div class="button-default button--primary button--big" style="margin-right: 16px">Explore Repostries</div>
+					<div
+						class="button-default button--primary button--big"
+						style="margin-right: 16px"
+					>
+						Explore Repostries
+					</div>
 				</a>
 				<a href="https://docs.git3.sh/" target="_blank">
-					<div class="button-default button--secondary button--big">Learn More</div>
+					<div class="button-default button--secondary button--big">
+						Learn More
+					</div>
 				</a>
 			</div>
 			<div class="row" style="margin-top: 160px; gap: 48px">
 				<div class="column">
-					<img class="homepage-icon" style="width: 85px; height: 85px" src="{{AssetUrlPrefix}}/img/censorship.svg" />
+					<img
+						class="homepage-icon"
+						style="width: 85px; height: 85px"
+						src="{{ AssetUrlPrefix }}/img/censorship.svg"
+					/>
 					<div class="homepage-icon-text">Anti Censorship</div>
-					<div class="homepage-icon-des">Use crypto wallet to login and do authentication</div>
+					<div class="homepage-icon-des">
+						Use crypto wallet to login and do authentication
+					</div>
 				</div>
 				<div class="column">
-					<img class="homepage-icon" style="width: 85px; height: 85px" src="{{AssetUrlPrefix}}/img/decentralized.svg" />
+					<img
+						class="homepage-icon"
+						style="width: 85px; height: 85px"
+						src="{{ AssetUrlPrefix }}/img/decentralized.svg"
+					/>
 					<div class="homepage-icon-text">Fully Decentralized</div>
-					<div class="homepage-icon-des">Access control with smart contracts</div>
-
+					<div class="homepage-icon-des">
+						Access control with smart contracts
+					</div>
 				</div>
 				<div class="column">
-					<img class="homepage-icon" style="width: 85px; height: 85px" src="{{AssetUrlPrefix}}/img/storage.svg" />
+					<img
+						class="homepage-icon"
+						style="width: 85px; height: 85px"
+						src="{{ AssetUrlPrefix }}/img/storage.svg"
+					/>
 					<div class="homepage-icon-text">Onchain Storage</div>
-					<div class="homepage-icon-des">Store your code cheap and forever on blockchain system</div>
+					<div class="homepage-icon-des">
+						Store your code cheap and forever on blockchain system
+					</div>
 				</div>
 			</div>
 
-			<div class="column center" style="margin-top: 110px;">
+			<div class="column center" style="margin-top: 110px">
 				<div class="homepage-section-header">Install Git3</div>
-				<div class="row " style="margin-top: 30px; align-items: center; justify-content: center;">
-					<code data-lang="bash" style="padding: 0; height: 44px; padding: 0 20px; line-height: 44px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; background: #000;">
+				<div
+					class="row"
+					style="margin-top: 30px; align-items: center; justify-content: center"
+				>
+					<code
+						data-lang="bash"
+						style="
+							padding: 0;
+							height: 44px;
+							padding: 0 20px;
+							line-height: 44px;
+							border-top-left-radius: 10px;
+							border-bottom-left-radius: 10px;
+							background: #000;
+						"
+					>
 						curl -fsSL git3.sh | sh
 					</code>
-					<button id="copyButton" style="height: 44px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border: none; background: #6752f7; padding: 0 20px; cursor: pointer;" onclick="copyInstallText()">
+					<button
+						id="copyButton"
+						style="
+							height: 44px;
+							border-top-right-radius: 10px;
+							border-bottom-right-radius: 10px;
+							border: none;
+							background: #6752f7;
+							padding: 0 20px;
+							cursor: pointer;
+						"
+						onclick="copyInstallText()"
+					>
 						Copy
 					</button>
 				</div>
 			</div>
 
-			<div class="column center" style="margin-top: 110px;">
+			<div class="column center" style="margin-top: 110px">
 				<div class="homepage-section-header">Use Git3</div>
 
 				<div class="homepage-use-section">
 					<div class="homepage-use-explain">
 						<div class="homepage-use-explain-header">1. Create a wallet</div>
 						<div class="homepage-use-explain-content">
-							<div class="homepage-use-explain-content-text">Create a git3 cli wallet, or you can import your mnemonic or private key use git3 wallet import</div>
+							<div class="homepage-use-explain-content-text">
+								Create a git3 cli wallet, or you can import your mnemonic or
+								private key use git3 wallet import
+							</div>
 						</div>
 					</div>
-					<div style="width: 50%; display: inline-block;">
+					<div style="width: 50%; display: inline-block">
 						<code class="language-bash">
 							<p>~ git3 wallet create</p>
 							<br />
-							<p class='comment'>// select key type (mnemonic) </p>
-							<p class='comment'>// give an account name (default)</p>
+							<p class="comment">// select key type (mnemonic)</p>
+							<p class="comment">// give an account name (default)</p>
 							<br />
 							<p>~ git3 wallet list</p>
 							<br />
-							<p class='comment'>// your wallet address </p>
+							<p class="comment">// your wallet address</p>
 						</code>
 					</div>
 				</div>
@@ -75,50 +138,144 @@
 					<div class="homepage-use-explain">
 						<div class="homepage-use-explain-header">2. Get some coins</div>
 						<div class="homepage-use-explain-content">
-							<div class="homepage-use-explain-content-text">In order to push code to smart contract, you need some test coins, leave your wallet address here to receive coins</div>
+							<div class="homepage-use-explain-content-text">
+								In order to push code to smart contract, you need some test
+								coins, leave your wallet address here to receive coins
+							</div>
 						</div>
 					</div>
 
-					<div style="width: 50%; display: inline-block; text-align: left;">
-						<input type="text" style="padding: 0; height: 44px; padding: 0 20px; line-height: 44px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; background: #000; border:none; min-width: 300px;" />
-						<button id="copyButton" style="height: 44px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border: none; background: #6752f7; padding: 0 20px; cursor: pointer;" onclick="">
+					<div style="width: 50%; display: inline-block; text-align: left">
+						<input
+							id="address"
+							type="text"
+							placeholder="0x1234..."
+							style="
+								padding: 0;
+								height: 44px;
+								padding: 0 20px;
+								line-height: 44px;
+								border-top-left-radius: 10px;
+								border-bottom-left-radius: 10px;
+								background: #000;
+								border: none;
+								min-width: 300px;
+							"
+						/>
+						<button
+							id="apply"
+							style="
+								height: 44px;
+								border-top-right-radius: 10px;
+								border-bottom-right-radius: 10px;
+								border: none;
+								background: #6752f7;
+								padding: 0 20px;
+								cursor: pointer;
+							"
+							onclick=""
+						>
 							Apply
 						</button>
-					</div>	
+
+						<div
+							id="faucet_tips"
+							style="line-height: 24px; margin-top: 20px"
+						></div>
+					</div>
 				</div>
 
 				<div class="homepage-use-section">
 					<div class="homepage-use-explain">
-						<div class="homepage-use-explain-header">3. Create repo and push</div>
+						<div class="homepage-use-explain-header">
+							3. Create repo and push
+						</div>
 						<div class="homepage-use-explain-content">
-							<div class="homepage-use-explain-content-text">Create your repo, add some commit, add push to the smart contact</div>
+							<div class="homepage-use-explain-content-text">
+								Create your repo, add some commit, add push to the smart contact
+							</div>
 						</div>
 					</div>
-					<div style="width: 50%; display: inline-block;">
+					<div style="width: 50%; display: inline-block">
 						<code class="language-bash">
 							<p>~ git3 repo create git3://playground.w3q/repo_name</p>
 							<br />
-							<p class='comment'>// create a repo on playground hub on ETHStorage</p>
+							<p class="comment">
+								// create a repo on playground hub on ETHStorage
+							</p>
 							<br />
 							<p>~ git remote add w3q git3://playground.w3q/repo_name</p>
 							<br />
-							<p class='comment'>// add a w3q remote to your git repo</p>
+							<p class="comment">// add a w3q remote to your git repo</p>
 							<br />
 							<p>~ git push w3q main</p>
 							<br />
-							<p class='comment'>// here you go!</p>
+							<p class="comment">// here you go!</p>
 						</code>
 					</div>
 				</div>
 			</div>
 
-			<div class="column center" style="margin-top: 110px;">
+			<div class="column center" style="margin-top: 110px">
 				<div style="text-align: left">
-					<img src="{{AssetUrlPrefix}}/img/logo.svg" class="footer-logo" />
+					<img src="{{ AssetUrlPrefix }}/img/logo.svg" class="footer-logo" />
 				</div>
-				<div class="homepage-footer">
-				</div>
+				<div class="homepage-footer"></div>
 			</div>
 		</div>
 	</div>
 </div>
+<script>
+	let apply = document.getElementById("apply");
+	let faucet_tips = document.getElementById("faucet_tips");
+	apply.addEventListener("click", async () => {
+		let address = document.getElementById("address").value;
+		if (address.length != 42) {
+			alert("Invalid address");
+			return;
+		}
+		apply.disabled = true;
+		apply.innerHTML = "⌛️";
+		let newwindow = window.open();
+
+		let txt = `Hi%2C%20I%27m%20experimenting%20with%20%23git3%2C%20it%27s%20a%20git%20protocol%20for%20web3.%20%0ARequesting%20faucet%20funds%20into%20${address}%20%40git3protocol%0Agit3.sh`;
+
+		newwindow.location = "https://twitter.com/intent/tweet?text=" + txt;
+
+		let res = await axios.post(
+			"/api/v1/faucet/request",
+			{
+				address: address,
+			},
+			{
+				responseType: "json",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				validateStatus: function (status) {
+					return true;
+				},
+			}
+		);
+		console.log(res);
+		console.log(res.status, res.data);
+		let data = res.data;
+
+		setTimeout(() => {
+			if (res.status === 200) {
+				faucet_tips.innerHTML = `<a href="${data.w3q_tx}" target="_blank">Sent ${res.data.w3q_amount} W3Q on [Web3Q Galileo]</a>
+			<br/>
+			<a href="${data.arbg_tx}" target="_blank">Sent ${res.data.arbg_amount} gETH on [Arbitrum - Goerli]</a>
+			`;
+				apply.innerHTML = "✅";
+			} else {
+				faucet_tips.innerHTML = data.message;
+				apply.innerHTML = "❌";
+			}
+			apply.disabled = false;
+			setTimeout(() => {
+				apply.innerHTML = "Apply";
+			}, 1000 * 10);
+		}, 1000 * 5);
+	});
+</script>

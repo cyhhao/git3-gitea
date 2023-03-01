@@ -354,3 +354,7 @@ type RepoTransfer struct {
 	Recipient *User   `json:"recipient"`
 	Teams     []*Team `json:"teams"`
 }
+
+type RequestFaucet struct{
+	Address string `json:"address"`
+}

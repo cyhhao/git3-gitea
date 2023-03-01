@@ -1198,6 +1198,10 @@ func Routes(ctx gocontext.Context) *web.Route {
 		m.Group("/topics", func() {
 			m.Get("/search", repo.TopicSearch)
 		})
+
+		m.Group("/faucet", func() {
+			m.Post("/request", bind(api.RequestFaucet{}), misc.RequestFaucet)
+		})
 	}, sudo())
 
 	return m
