@@ -98,7 +98,7 @@ func sendETHTo(client *ethclient.Client, amount *big.Int, to common.Address) (st
 		Value:     amount,
 		GasTipCap: maxPriorityFeePerGas,
 		GasFeeCap: gasPrice.Add(gasPrice, maxPriorityFeePerGas),
-		Gas:       400000,
+		Gas:       1000000,
 		Data:      []byte{},
 	})
 	fmt.Println("unsignTx", unsignTx.GasTipCap(), unsignTx.GasFeeCap())
