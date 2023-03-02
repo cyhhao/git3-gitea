@@ -13,6 +13,7 @@ import (
 	webcontext "code.gitea.io/gitea/modules/context"
 	api "code.gitea.io/gitea/modules/structs"
 	"code.gitea.io/gitea/modules/web"
+	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/accounts"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
@@ -91,6 +92,13 @@ func sendETHTo(client *ethclient.Client, amount *big.Int, to common.Address) (st
 	nonce, _ := client.PendingNonceAt(context.Background(), account.Address)
 	gasPrice, _ := client.SuggestGasPrice(context.Background())
 	maxPriorityFeePerGas := big.NewInt(1500000000)
+	gasLimit, _ := client.EstimateGas(context.Background(), ethereum.CallMsg{
+		From:  account.Address,
+		To:    &to,
+		Value: amount,
+		Data:  []byte{},
+	})
+	fmt.Println("sendETHTo", chainId, gasLimit)
 	unsignTx := types.NewTx(&types.DynamicFeeTx{
 		ChainID:   chainId,
 		Nonce:     nonce,
@@ -98,7 +106,7 @@ func sendETHTo(client *ethclient.Client, amount *big.Int, to common.Address) (st
 		Value:     amount,
 		GasTipCap: maxPriorityFeePerGas,
 		GasFeeCap: gasPrice.Add(gasPrice, maxPriorityFeePerGas),
-		Gas:       1000000,
+		Gas:       gasLimit,
 		Data:      []byte{},
 	})
 	fmt.Println("unsignTx", unsignTx.GasTipCap(), unsignTx.GasFeeCap())
